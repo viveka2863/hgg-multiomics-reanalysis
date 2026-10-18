@@ -75,3 +75,10 @@ Data: IKAP_result_v2_20160708.txt (90 kinases x 10 samples), ALL_LIMMA_ANOVA_HGG
 - Q-E Stability: leave-one-sample-out (10 runs, all-10-sample analysis): Jaccard of the NTRK-vs-PDGFRA set vs the full set; stable if Jaccard >= 0.8 in >= 9 of 10 runs.
 - Q-F Descriptive only: ranks of PRKAA1, PRKAA2, EEF2K (CRISPR-essential) among the kinases by NTRK-vs-PDGFRA effect and by F under each method; 3 positives, no statistics.
 - Out of scope: AGC/CMGC superfamily test (not fully specified in the paper); IKAP rerun.
+
+## 2026-10-18 C7 part A RESULTS (c7_null_sensitivity.R; c7_null_sensitivity.csv, results/metrics.csv)
+- Q-A reproduced: authors' null gives p = 0.0019 (MC SE 0.0004; paper 0.003, saved workspace 0.0022); observed a(P) = 1.45 is 2.87 null SDs above the null mean (0.086).
+- Q-B: p crosses 0.05 between tau = 0.3 (p = 0.030) and 0.4 (p = 0.057, MC SE 0.002); p = 0.084 at 0.5 and 0.170 at 1.0. Critical a(P) for p < 0.05 rises from 0.87 (tau 0) to 1.49 (tau 0.4) and 2.43 (tau 1.0); observed 1.45. Pre-registered decision rule -> method-dependent. p is non-monotonic above tau ~1.1 (pools < 1,000 sites): not interpreted.
+- Q-C: a(P) = 1.45 = mean signed log2FC 0.309 per protein (about 1.24-fold), not a 1.45-fold change.
+- Direction: observed a(P) exceeds the null mean at every tau (z_obs 0.88-2.87).
+- Limits: the 22 proteins/Fi/Ci are not in the repo, so selection could not be matched to the paper's DE rule (|log2FC| >= 1 in any of three comparisons); tau = 0 understates and tau = 1 overstates the selection. Null draws are single sites whereas observed Fi are per-protein averages (would narrow the null; untested). Part B needed for a matched null and a sample-label permutation.
