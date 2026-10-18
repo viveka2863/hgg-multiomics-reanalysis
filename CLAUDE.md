@@ -43,3 +43,8 @@ macOS arm64, R 4.6.1, Java 11, Perl 5.34. Use Rscript. Commit email is already s
    only 96.9% (ARI 0.951). Reassigning proteins by highest eigengene correlation (kME) made it worse (ARI 0.904): rejected.
 7. Shipped/rerun WGCNA outputs have no protein accessions; rows align to HGG_whl_input by order.
    Always attach Protein_Accession from the input and assert the intensity columns are identical.
+
+# Results convention
+Every comparison script (1) writes tidy CSVs with Protein_Accession (or site ID) into its claim folder,
+(2) saves figures as PNG and PDF, (3) appends rows to results/metrics.csv with columns: claim, variant, metric, value, n.
+Scripts are the source of truth; no notebooks for analysis.
