@@ -82,3 +82,21 @@ Data: IKAP_result_v2_20160708.txt (90 kinases x 10 samples), ALL_LIMMA_ANOVA_HGG
 - Q-C: a(P) = 1.45 = mean signed log2FC 0.309 per protein (about 1.24-fold), not a 1.45-fold change.
 - Direction: observed a(P) exceeds the null mean at every tau (z_obs 0.88-2.87).
 - Limits: the 22 proteins/Fi/Ci are not in the repo, so selection could not be matched to the paper's DE rule (|log2FC| >= 1 in any of three comparisons); tau = 0 understates and tau = 1 overstates the selection. Null draws are single sites whereas observed Fi are per-protein averages (would narrow the null; untested). Part B needed for a matched null and a sample-label permutation.
+
+## 2026-10-18 C5 RESULTS (analysis/C5_kinase_activity/c5_kinase_activity.R; CSVs in original/ and improved/, results/metrics.csv, env/sessionInfo_C5.txt)
+Verified by data (script output):
+- Q-A: limma on the 9 coded columns reproduces the published table exactly. Max abs diff: three contrasts <= 4.4e-15, AveExpr 4.7e-15, F 2.2e-12, P 4.9e-15, adj.P 4.9e-15 (max relative <= 1.0e-14). The alternative-coding fallback was not needed.
+- Q-B: F adj.P<0.05: 62 coded, 63 all-10 (Jaccard 0.953). NTRK-vs-PDGFRA adj.P<0.05 (BH over 90): 9 coded, 11 all-10 (Jaccard 0.818). Pre-registered rule -> robust (both >= 0.8). Note the NTRK-vs-PDGFRA margin is thin (0.818 vs 0.8).
+- Q-C: published adj.P<0.05/0.01/0.001 = 62/48/30 (paper: 41). Counts only.
+- Q-D: 101 kinases with >=3 substrate sites (187 with any site); 59 in common with IKAP. Per-kinase Pearson median 0.957, 81.4% >= 0.8. Spearman of NTRK-minus-PDGFRA difference 0.668. Substrate-score limma: 45 kinases adj.P<0.05; IKAP all-10 set on the common kinases has 6; Jaccard 0.133 (IKAP BH computed over 90, then restricted; substrate BH over 101).
+- Q-E: LOO Jaccard vs full set: 0.667, 0.833, 0.833, 0.846, 0.636, 0.545, 0.379, 0.917, 0.909, 0.917 (drop PDGFRA1-4, NTRK1-3, CNTRL1-3). >= 0.8 in 6/10 runs -> not stable by the pre-registered criterion. Dropping NTRK3 gives 29 kinases (n_set), i.e. the set is sensitive to which NTRK samples are present.
+- Q-F (descriptive, in c5_descriptive_ranks.csv): PRKAA2 ranks 2nd by signed NTRK-PDGFRA effect in all three scores; PRKAA1 and EEF2K rank mid/low by effect (37-47th, 26-47th); EEF2K has only 1 substrate site so no substrate score.
+Assumed / not verified: Data1-7 -> PDGFRA1-4, NTRK1-3 mapping (Data8-10 = cortex verified earlier); substrate-score column order mapped to IKAP sample names on that assumption; IKAP not rerun; kinase names matched exactly between IKAP and the KINASE column (no alias mapping); a site counts for every listed kinase (duplicates removed).
+Choices within the pre-registration: Q-F ranks given both by signed and absolute effect (rule did not specify); LOO Jaccard defined as 1 if both sets empty (never occurred); NTRK-vs-PDGFRA adj.P is BH of limma's contrast p over the kinases in each analysis.
+Fixes to own code: removed an unused alternative-design branch and a placeholder column after Q-A passed exactly; script re-run is idempotent for C5 rows in results/metrics.csv.
+Not committed (per instruction). git status --short JUMPn JUMPp: empty.
+
+## 2026-10-18 C5 correction and verdict
+- Correction to the C5 RESULTS entry: Q-F ranks by signed NTRK-PDGFRA effect: PRKAA2 2nd (IKAP coded), 2nd (IKAP all-10), 6th (substrate average); PRKAA1 45th, 37th, 34th; EEF2K 47th (coded), 26th (all-10), no substrate score. By F (tumour vs cortex): PRKAA1 9th/3rd/5th, PRKAA2 8th/4th/3rd, EEF2K 20th/17th (coded/all-10; no substrate score).
+- Verdict: C5a robust to sample choice; C5b method-dependent and fragile (Q-B passes narrowly at Jaccard 0.818; Q-E fails 6/10; Q-D Jaccard 0.133). The Q-B rule alone gives "robust"; the label also reflects the pre-registered stability and agreement criteria.
+- Not verified: Data1-7 mapping; IKAP scale (Fig. 1 axis label assumes log2); the 62-vs-41 gap (needs Supplementary Data 4e).
