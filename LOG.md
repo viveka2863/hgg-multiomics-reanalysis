@@ -55,3 +55,12 @@ Verified by data: control reproduces shipped labels (ARI 0.9993); channel-mappin
 - Structure (cross-tabs): five clusters are two pairs (WP-C1+C2, WP-C3+C4); merge 0.25 gives 3 clusters; unscaled input merges 306/307 WP-C2 proteins into WP-C1; silhouette peaks at k=2.
 - Exploratory, not pre-registered: 463 proteins (control green+black) have PDGFRA >= NTRK.
 - Limits: n=10; DE pre-selection (circularity); ARI vs paper = similarity to their method; LOO only for control settings; all-features includes 4,327/4,703 DE proteins.
+
+## 2026-10-18 PRE-REGISTRATION: C7 part A (written BEFORE running c7_null_sensitivity.R)
+Disclosure: informal Python checks earlier in this project (thresholds 0.5 and 1.0) already suggested p > 0.05 under selection-matched nulls. This entry formalises them; the tau grid and decision rule below were fixed before this run.
+Data: JUMPn/JUMPna/.RData, z = log2FC NTRK vs PDGFRA of 28,527 phosphosites (no site names; the 22 pathway proteins and their Fi are NOT in the repo). Observed a(P) = 1.45 is taken from the paper. Paper Methods say Fi is relative to cortex; the repo says NTRK vs PDGFRA (logged discrepancy).
+- Q-A: reproduce the authors' null (22 values drawn without replacement from all sites; positions 4, 8, 21 sign-flipped; 10,000 draws; seed 1). Expect p about 0.002-0.003 (paper 0.003; saved workspace 0.0022).
+- Q-B: sensitivity of p to the null: draw from sites with |log2FC| >= tau, tau = 0, 0.1, ..., 1.5. Report p(tau), the 95th-percentile critical a(P), and the first tau where p >= 0.05. Note: the paper's phosphosite DE rule (>= 2-fold, |log2FC| >= 1, in at least one of three pairwise comparisons) is not a threshold on NTRK-vs-PDGFRA alone, so tau = 1.0 overstates the selection and tau = 0 understates it; the true selection lies between.
+- Q-C: restate a(P) = 1.45 as mean signed log2FC per protein = 1.45 / sqrt(22).
+- Decision rule: robust if p < 0.05 for all tau in [0, 1.0]; method-dependent if p crosses 0.05 within [0, 1.0]; not supported if p >= 0.05 at tau = 0.
+- Part B (needs Supplementary Data 4h for the 22 proteins' Fi and Ci, and Supplementary Data 2 for DE flags): reproduce a(P), sample-label permutation null (35 splits; minimum one-sided p = 1/35), bootstrap CI over samples. To be pre-registered when the data are downloaded.
