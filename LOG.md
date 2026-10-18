@@ -46,3 +46,12 @@ AMBIGUITIES FLAGGED
 - Q-C: Stability. Leave-one-sample-out (10 runs, control settings): ARI of each run's labels vs full-data control labels. Stable if ARI >= 0.8 in >= 9 of 10 runs.
 - Variants fixed in advance: control (power 16, deepSplit 2, merge 0.20, minModuleSize 100); grid merge {0.15,0.20,0.25} x deepSplit {1,2,3}; log2 input; unscaled input (per-group rescaling removed); hierarchical Ward.D2 on 1-Pearson, k=5; k-means k=5 (seed 1, nstart 25) with silhouette k=2..8; all-features (top 8,000 proteins by MAD of log2, per-sample scale factors estimated from the data); leave-one-out.
 - Control check: the rerun must reproduce the shipped labels (ARI >= 0.999) or the script stops.
+
+## 2026-10-18 C3 compare arm RESULTS (c3_compare.R; summary_variants.csv, results/metrics.csv)
+Verified by data: control reproduces shipped labels (ARI 0.9993); channel-mapping Spearman >= 0.9997; rescaling factors PD 0.8857, TRK 0.8433, Cortex 1.0.
+- Q-A: no variant recovers the paper's labels better than the control (ARI 0.9507, 96.9% identical). Merge 0.15 = control (ARI 1.0000), so it does not explain the 147 differing proteins; kME reassignment also rejected. Residual unexplained.
+- Q-B: holds in 14/14 variants (Jaccard with WP-C1 0.80-0.92; lowest k-means 0.801, log2 0.810, unscaled 0.828).
+- Q-C: 10/10 leave-one-out runs ARI >= 0.8 (range 0.869-0.975; lowest dropping PD2, PD3, TRK2).
+- Structure (cross-tabs): five clusters are two pairs (WP-C1+C2, WP-C3+C4); merge 0.25 gives 3 clusters; unscaled input merges 306/307 WP-C2 proteins into WP-C1; silhouette peaks at k=2.
+- Exploratory, not pre-registered: 463 proteins (control green+black) have PDGFRA >= NTRK.
+- Limits: n=10; DE pre-selection (circularity); ARI vs paper = similarity to their method; LOO only for control settings; all-features includes 4,327/4,703 DE proteins.

@@ -1,0 +1,159 @@
+Allowing parallel execution with up to 9 working processes.
+[19:48:51] Loading data
+[19:48:51] Input proteins not found in hgg_whole_v1 by accession: 1
+[1] "cu|TPM3_NTRK1|TMP3_NTRK1"
+
+Channel-mapping proof (Spearman, input vs raw channel) and estimated rescaling factors:
+             Cortex1 Cortex2 Cortex3    PD1    PD2    PD3    PD4   TRK1   TRK2
+spearman           1       1       1 1.0000 1.0000 1.0000 1.0000 0.9999 1.0000
+scale_factor       1       1       1 0.8857 0.8857 0.8857 0.8857 0.8433 0.8433
+               TRK3
+spearman     0.9997
+scale_factor 0.8433
+[19:48:51] Control + grid (TOM computed once)
+..connectivity..
+..matrix multiplication (system BLAS)..
+..normalization..
+..done.
+
+CONTROL CHECK: ARI vs shipped labels = 0.9993
+[19:49:08] Variant: log2 input
+..connectivity..
+..matrix multiplication (system BLAS)..
+..normalization..
+..done.
+[19:49:25] Variant: unscaled input (hgg_whole_v1)
+..connectivity..
+..matrix multiplication (system BLAS)..
+..normalization..
+..done.
+[19:49:41] Variants: hierarchical (Ward.D2 on 1 - Pearson) and k-means, k = 5
+[19:49:41] Silhouette for k-means, k = 2..8
+[19:49:42] Variant: all features (top 8000 proteins by MAD of log2; per-sample scale factors applied)
+[19:49:42]   proteins available 13567, used 8000, of the 4,703 DE proteins 4327 are included
+..connectivity..
+..matrix multiplication (system BLAS)..
+..normalization..
+..done.
+[19:51:03] Leave-one-out 1/10: dropping Cortex1
+..connectivity..
+..matrix multiplication (system BLAS)..
+..normalization..
+..done.
+[19:51:19] Leave-one-out 2/10: dropping Cortex2
+..connectivity..
+..matrix multiplication (system BLAS)..
+..normalization..
+..done.
+[19:51:36] Leave-one-out 3/10: dropping Cortex3
+..connectivity..
+..matrix multiplication (system BLAS)..
+..normalization..
+..done.
+[19:51:52] Leave-one-out 4/10: dropping PD1
+..connectivity..
+..matrix multiplication (system BLAS)..
+..normalization..
+..done.
+[19:52:08] Leave-one-out 5/10: dropping PD2
+..connectivity..
+..matrix multiplication (system BLAS)..
+..normalization..
+..done.
+[19:52:25] Leave-one-out 6/10: dropping PD3
+..connectivity..
+..matrix multiplication (system BLAS)..
+..normalization..
+..done.
+[19:52:41] Leave-one-out 7/10: dropping PD4
+..connectivity..
+..matrix multiplication (system BLAS)..
+..normalization..
+..done.
+[19:52:58] Leave-one-out 8/10: dropping TRK1
+..connectivity..
+..matrix multiplication (system BLAS)..
+..normalization..
+..done.
+[19:53:14] Leave-one-out 9/10: dropping TRK2
+..connectivity..
+..matrix multiplication (system BLAS)..
+..normalization..
+..done.
+[19:53:32] Leave-one-out 10/10: dropping TRK3
+..connectivity..
+..matrix multiplication (system BLAS)..
+..normalization..
+..done.
+[19:53:49] Computing metrics
+[19:53:49] Figures
+
+================ SUMMARY (paste this back) ================
+Control check ARI vs shipped: 0.9993
+
+Variants, ranked by agreement with the paper's labels (Q-A) and cortex<PD<TRK claim (Q-B):
+         variant    n clusters unassigned ARI_vs_paper pct_identical
+         control 4703        5          0       0.9507        0.9687
+ grid_ds2_mh0.15 4703        5          0       0.9507        0.9687
+ grid_ds3_mh0.15 4703        5          0       0.9507        0.9687
+ grid_ds3_mh0.20 4703        5          0       0.9507        0.9687
+ grid_ds1_mh0.15 4703        5          0       0.9444        0.9496
+ grid_ds1_mh0.20 4703        5          0       0.9444        0.9496
+  hclust_ward_k5 4703        5          0       0.8976        0.9332
+         allfeat 8000        5          0       0.8957        0.9346
+ grid_ds1_mh0.25 4703        3          0       0.8906        0.9103
+ grid_ds2_mh0.25 4703        3          0       0.8906        0.9103
+ grid_ds3_mh0.25 4703        3          0       0.8906        0.9103
+            log2 4703        4          0       0.8775        0.9056
+        unscaled 4702        4          0       0.8733        0.9032
+       kmeans_k5 4703        5          0       0.8205        0.9103
+ ARI_vs_control QB_holds QB_best_rising_Jaccard
+         1.0000     TRUE                 0.9237
+         1.0000     TRUE                 0.9237
+         1.0000     TRUE                 0.9237
+         1.0000     TRUE                 0.9237
+         0.9922     TRUE                 0.9231
+         0.9922     TRUE                 0.9231
+         0.8851     TRUE                 0.8843
+         0.8798     TRUE                 0.8479
+         0.9007     TRUE                 0.8358
+         0.9007     TRUE                 0.8358
+         0.9007     TRUE                 0.8358
+         0.8823     TRUE                 0.8100
+         0.8680     TRUE                 0.8279
+         0.8299     TRUE                 0.8009
+
+Leave-one-out (Q-C):
+ dropped ari_vs_full
+ Cortex1      0.9581
+ Cortex2      0.9704
+ Cortex3      0.9751
+     PD1      0.9453
+     PD2      0.8686
+     PD3      0.8771
+     PD4      0.9519
+    TRK1      0.9443
+    TRK2      0.9016
+    TRK3      0.9418
+runs with ARI >= 0.8: 10 of 10
+
+Silhouette, k-means:
+ k mean_silhouette
+ 2          0.6945
+ 3          0.5998
+ 4          0.5112
+ 5          0.4508
+ 6          0.3638
+ 7          0.2937
+ 8          0.1980
+
+All-features: paper label vs module for the DE proteins:
+       allfeat_module
+paper   black blue brown green turquoise
+  WP-C1     0 1522    27     0         0
+  WP-C2    38  166     0     0         0
+  WP-C3     0   17   315    22         0
+  WP-C4     0    0     2   100         0
+  WP-C5     1    1     0    47      2069
+
+Outputs written to analysis/C3_coexpression/improved and results/metrics.csv
