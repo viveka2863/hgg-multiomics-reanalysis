@@ -39,3 +39,10 @@ AMBIGUITIES FLAGGED
 - Column order differs between files: IKAP_result (CNTRL, PDGFRA, NTRK) and HGG_whl_input (Cortex, PD, TRK) vs v5 files / raw (PDGFRA, NTRK, CNTRL).
 - hgg_whole_v1 transgene protein "cu|TMP3_NTRK1" is flat across channels (~46-55k), while the input row "cu|TPM3_NTRK1|TMP3_NTRK1" (different accession spelling) is 5x in TRK; accession mismatch is why 1 of 4,703 input proteins did not match v1. Not investigated further.
 - NTRK-transgene site names are spelled TMP3_NTRK1 in the site file but TPM3_NTRK1 elsewhere.
+
+## 2026-10-18 PRE-REGISTRATION: C3 compare arm (written BEFORE running c3_compare.R)
+- Q-A: Which settings best recover the paper's WP-C labels? Metrics: ARI and % identical (each cluster mapped to its majority paper label). Ranking only, no pass/fail.
+- Q-B: Does "a cluster rising cortex < PDGFRA < NTRK" survive? Per variant, per-cluster mean of per-protein z-scored intensities by group. Claim holds if some cluster has Cortex < PD < TRK AND Jaccard >= 0.8 with the paper's WP-C1 members (all-features variant: members restricted to the 4,703 DE proteins).
+- Q-C: Stability. Leave-one-sample-out (10 runs, control settings): ARI of each run's labels vs full-data control labels. Stable if ARI >= 0.8 in >= 9 of 10 runs.
+- Variants fixed in advance: control (power 16, deepSplit 2, merge 0.20, minModuleSize 100); grid merge {0.15,0.20,0.25} x deepSplit {1,2,3}; log2 input; unscaled input (per-group rescaling removed); hierarchical Ward.D2 on 1-Pearson, k=5; k-means k=5 (seed 1, nstart 25) with silhouette k=2..8; all-features (top 8,000 proteins by MAD of log2, per-sample scale factors estimated from the data); leave-one-out.
+- Control check: the rerun must reproduce the shipped labels (ARI >= 0.999) or the script stops.
