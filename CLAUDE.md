@@ -39,3 +39,7 @@ macOS arm64, R 4.6.1, Java 11, Perl 5.34. Use Rscript. Commit email is already s
    Permutation test with 4 vs 3 samples cannot give p below 1/35.
 4. Enrichment script default FDR cutoff 0.2 (paper: 0.05). Only 984 sites (~3%) have a known kinase.
 5. Methods say ANOVA + permutation for DE; the repo's statistics are limma-based.
+6. C3 control arm: the authors' script reproduces its shipped output (ARI 0.9993) but matches the paper's WP-C labels
+   only 96.9% (ARI 0.951). Reassigning proteins by highest eigengene correlation (kME) made it worse (ARI 0.904): rejected.
+7. Shipped/rerun WGCNA outputs have no protein accessions; rows align to HGG_whl_input by order.
+   Always attach Protein_Accession from the input and assert the intensity columns are identical.
