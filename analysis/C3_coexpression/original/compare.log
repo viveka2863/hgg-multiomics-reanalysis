@@ -1,0 +1,35 @@
+rows: input 4703 shipped 4703 rerun 4703 
+intensities identical input vs shipped: TRUE 
+       shipped
+paper   black blue green turquoise yellow
+  WP-C1     0 1538    13         0     60
+  WP-C2     0   22     0         0    246
+  WP-C3     7   32   337         0      0
+  WP-C4    96    0     6         2      0
+  WP-C5     4    0     0      2339      1
+           rerun
+shipped     black blue green turquoise yellow
+  black       107    0     0         0      0
+  blue          0 1591     0         0      1
+  green         0    0   356         0      0
+  turquoise     0    0     0      2341      0
+  yellow        0    1     0         0    306
+       rerun
+paper   black blue green turquoise yellow
+  WP-C1     0 1538    13         0     60
+  WP-C2     0   22     0         0    246
+  WP-C3     7   32   337         0      0
+  WP-C4    96    0     6         2      0
+  WP-C5     4    0     0      2339      1
+sizes shipped:
+shipped
+    black      blue     green turquoise    yellow 
+      107      1592       356      2341       307 
+sizes rerun:
+rerun
+    black      blue     green turquoise    yellow 
+      107      1592       356      2341       307 
+        comparison       ARI
+1 shipped_vs_rerun 0.9992662
+2   paper_vs_rerun 0.9506869
+3 paper_vs_shipped 0.9506869
