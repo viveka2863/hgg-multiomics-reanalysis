@@ -1,0 +1,121 @@
+[15:32:10] Loading layers
+proteome: 13419 features; phospho: 31913 features (contaminants removed)
+[15:32:11] PCA variants
+[15:32:20] Hierarchical variants
+[15:32:53] Leave-one-out
+[15:33:02] Replicate check
+[15:33:02] Figures
+
+================ SUMMARY (paste this back) ================
+
+Paper-setup PCA (log2, all features, centred): % variance PC1 / PC2 (paper: proteome 76 / 12, phospho 66 / 15)
+    layer PC1_pct PC2_pct ARI_all3 ARI_tumour2
+ proteome   76.14   12.04   1.0000      1.0000
+  phospho   67.69   13.42   0.6763      0.4324
+
+Paper-setup hierarchical (log2, top1000, euclid_z, ward.D):
+    layer ARI_all3 ARI_tumour2
+ proteome   1.0000           1
+  phospho   0.6763           1
+
+Fraction of variants with ARI = 1 (rule: >= 0.9):
+                           proteome phospho
+PCA+k-means, all samples      0.375   0.250
+PCA+k-means, tumours only     0.375   0.250
+Hierarchical, all samples     0.344   0.219
+Hierarchical, tumours only    0.344   0.250
+
+Variants with ARI < 1 (all samples or tumours only):
+                                   variant ARI_all3 ARI_tumour2
+              pca_phospho_log2_all_centred    0.676      0.4324
+              pca_proteome_raw_all_centred    0.676      0.4324
+               pca_phospho_raw_all_centred    0.412     -0.0769
+          pca_proteome_raw_top1000_centred    0.676      0.4324
+           pca_phospho_raw_top1000_centred    0.412     -0.0769
+              pca_proteome_log2_all_scaled    0.676      0.4324
+               pca_phospho_log2_all_scaled    0.676      0.4324
+               pca_proteome_raw_all_scaled    0.676      0.4324
+                pca_phospho_raw_all_scaled    0.676      0.4324
+           pca_proteome_raw_top1000_scaled    0.676      0.4324
+            pca_phospho_raw_top1000_scaled    0.676      0.4324
+      hc_proteome_log2_all_euclid_z_ward.D    0.676      0.4324
+       hc_phospho_log2_all_euclid_z_ward.D    0.676      0.4324
+       hc_proteome_raw_all_euclid_z_ward.D    0.676      0.4324
+        hc_phospho_raw_all_euclid_z_ward.D    0.676      0.4324
+   hc_phospho_log2_top1000_euclid_z_ward.D    0.676      1.0000
+   hc_proteome_raw_top1000_euclid_z_ward.D    0.676      0.4324
+    hc_phospho_raw_top1000_euclid_z_ward.D    0.676      0.4324
+            hc_phospho_log2_all_cor_ward.D    0.676      0.4324
+            hc_proteome_raw_all_cor_ward.D    0.676      0.4324
+             hc_phospho_raw_all_cor_ward.D    0.412     -0.0769
+        hc_proteome_raw_top1000_cor_ward.D    0.676      0.4324
+         hc_phospho_raw_top1000_cor_ward.D    0.412     -0.0769
+     hc_proteome_log2_all_euclid_z_ward.D2    0.676      0.4324
+      hc_phospho_log2_all_euclid_z_ward.D2    0.676      0.4324
+      hc_proteome_raw_all_euclid_z_ward.D2    0.676      0.4324
+       hc_phospho_raw_all_euclid_z_ward.D2    0.676      0.4324
+  hc_proteome_raw_top1000_euclid_z_ward.D2    0.676      0.4324
+   hc_phospho_raw_top1000_euclid_z_ward.D2    0.676      0.4324
+           hc_phospho_log2_all_cor_ward.D2    0.676      0.4324
+           hc_proteome_raw_all_cor_ward.D2    0.676      0.4324
+            hc_phospho_raw_all_cor_ward.D2    0.412     -0.0769
+       hc_proteome_raw_top1000_cor_ward.D2    0.676      0.4324
+        hc_phospho_raw_top1000_cor_ward.D2    0.412     -0.0769
+     hc_proteome_log2_all_euclid_z_average    0.676      0.4324
+      hc_phospho_log2_all_euclid_z_average    0.676      0.4324
+      hc_proteome_raw_all_euclid_z_average    0.676      0.4324
+       hc_phospho_raw_all_euclid_z_average    0.676      0.4324
+  hc_proteome_raw_top1000_euclid_z_average    0.676      0.4324
+   hc_phospho_raw_top1000_euclid_z_average    0.676      0.4324
+          hc_proteome_log2_all_cor_average    0.676      0.4324
+           hc_phospho_log2_all_cor_average    0.676      0.4324
+           hc_proteome_raw_all_cor_average    0.676      0.4324
+            hc_phospho_raw_all_cor_average    0.412     -0.0769
+       hc_proteome_raw_top1000_cor_average    0.676      0.4324
+        hc_phospho_raw_top1000_cor_average    0.412     -0.0769
+    hc_proteome_log2_all_euclid_z_complete    0.676      0.4324
+     hc_phospho_log2_all_euclid_z_complete    0.676      0.4324
+     hc_proteome_raw_all_euclid_z_complete    0.676      0.4324
+      hc_phospho_raw_all_euclid_z_complete    0.676      0.4324
+ hc_proteome_raw_top1000_euclid_z_complete    0.676      0.4324
+  hc_phospho_raw_top1000_euclid_z_complete    0.676      0.4324
+          hc_phospho_log2_all_cor_complete    0.676      0.4324
+          hc_proteome_raw_all_cor_complete    0.676      0.4324
+           hc_phospho_raw_all_cor_complete    0.412     -0.0769
+      hc_proteome_raw_top1000_cor_complete    0.676      0.4324
+       hc_phospho_raw_top1000_cor_complete    0.412     -0.0769
+
+Leave-one-out ARI (rule: >= 0.8 in >= 9 of 10):
+    layer dropped ARI_P1_hc ARI_P2_pca_kmeans
+ proteome Cortex1     1.000             1.000
+ proteome Cortex2     1.000             1.000
+ proteome Cortex3     1.000             1.000
+ proteome     PD1     0.643             1.000
+ proteome     PD2     0.643             0.643
+ proteome     PD3     0.643             1.000
+ proteome     PD4     0.643             1.000
+ proteome    TRK1     1.000             1.000
+ proteome    TRK2     1.000             1.000
+ proteome    TRK3     1.000             1.000
+  phospho Cortex1     1.000             0.609
+  phospho Cortex2     1.000             0.609
+  phospho Cortex3     1.000             0.609
+  phospho     PD1     0.643             0.643
+  phospho     PD2     0.643             0.643
+  phospho     PD3     0.643             0.643
+  phospho     PD4     0.643             1.000
+  phospho    TRK1     1.000             0.683
+  phospho    TRK2     1.000             1.000
+  phospho    TRK3     1.000             1.000
+  proteome: P1 runs >= 0.8: 6/10; P2 runs >= 0.8: 9/10
+  phospho: P1 runs >= 0.8: 6/10; P2 runs >= 0.8: 3/10
+
+Replicate check (PD1-PD2 vs other within-group pairs):
+    layer PD1_PD2_diff PD1_PD2_rank_of_12     lowest_pair lowest_diff
+ proteome      0.06296                  4 Cortex1-Cortex3     0.05596
+  phospho      0.15919                  5 Cortex2-Cortex3     0.11910
+ flag_replicates
+           FALSE
+           FALSE
+
+Outputs written to analysis/C1_exploration/improved and results/metrics.csv

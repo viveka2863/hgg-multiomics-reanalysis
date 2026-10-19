@@ -110,3 +110,9 @@ Data: whl_hgg_v5 (whole proteome, 13,419 rows) and pho_hgg_uniq_v5 (phospho, 31,
 - Q-D Stability: leave-one-sample-out (10 runs per layer) for (P1) log2, top-1000 MAD re-selected, z-scored Euclidean, ward.D, k = 3, and (P2) PCA log2 all features centred + k-means k = 3. ARI against true labels of the remaining samples. Stable if ARI >= 0.8 in >= 9 of 10 runs.
 - Q-E Replicate check: median absolute log2 difference between every sample pair (log2, all features). PD1-PD2 flagged as possible technical replicates if their value is lower than every other within-group pair; then n = 3 independent PDGFRA tumours is flagged for C2/C7.
 - Verdict rule: C1 robust if Q-B (all samples and tumours only) is robust and Q-D is stable in both layers; otherwise method-dependent with the failing variants named.
+
+## 2026-10-18 C1 RESULTS (c1_exploration.R; c1_*.csv, results/metrics.csv)
+Pre-registered results: Q-A proteome reproduced (PC1/PC2 76.1/12.0; ARI 1.0), phospho PC1/PC2 67.7/13.4 with ARI 0.676 (all samples) and tumour-only PCA ARI 0.432, tumour-only hierarchical ARI 1.0. Q-B: fraction of variants with ARI = 1: proteome 0.34-0.38, phospho 0.22-0.25 (< 0.9) -> method-dependent. Q-D: hierarchical LOO >= 0.8 in 6/10 runs in both layers; PCA+k-means 9/10 proteome, 3/10 phospho. Q-E: PD1-PD2 median abs log2 diff 0.063 (proteome, rank 4/12) and 0.159 (phospho, rank 5/12); lowest pairs are cortex pairs; not flagged.
+Exploratory (not pre-registered): successful variants are essentially log2 + top-1000 MAD features; raw intensities and z-scoring all features fail.
+Observation for part B: the repeated ARI values 0.676 and 0.432 are the values expected when one NTRK sample is grouped with PDGFRA. Which sample is not established by this run; see the C1 part B pre-registration for provenance.
+Implication to check: NTRK-vs-PDGFRA comparisons (C2, C5, C7) may rest on two typical NTRK samples.

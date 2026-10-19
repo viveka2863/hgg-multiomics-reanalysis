@@ -1,0 +1,17 @@
+"variant","layer","transform","features","scaling","PC1_pct","PC2_pct","ARI_all3","ARI_tumour2"
+"pca_proteome_log2_all_centred","proteome","log2","all","centred",76.1362792657063,12.0432399060418,1,1
+"pca_phospho_log2_all_centred","phospho","log2","all","centred",67.6889994591614,13.4180840122478,0.676258992805755,0.432432432432432
+"pca_proteome_raw_all_centred","proteome","raw","all","centred",77.1592651333624,15.8453184303213,0.676258992805755,0.432432432432432
+"pca_phospho_raw_all_centred","phospho","raw","all","centred",55.169569899329,34.9522134648922,0.411764705882353,-0.076923076923077
+"pca_proteome_log2_top1000_centred","proteome","log2","top1000","centred",73.6125985602832,14.5367791247245,1,1
+"pca_phospho_log2_top1000_centred","phospho","log2","top1000","centred",73.5758168042673,13.8971334623851,1,1
+"pca_proteome_raw_top1000_centred","proteome","raw","top1000","centred",77.1733460401399,15.8651515840062,0.676258992805755,0.432432432432432
+"pca_phospho_raw_top1000_centred","phospho","raw","top1000","centred",55.0464782219536,35.3082297321543,0.411764705882353,-0.076923076923077
+"pca_proteome_log2_all_scaled","proteome","log2","all","scaled",67.2056462472417,14.0731847525273,0.676258992805755,0.432432432432432
+"pca_phospho_log2_all_scaled","phospho","log2","all","scaled",51.9743530991314,15.3376163874642,0.676258992805755,0.432432432432432
+"pca_proteome_raw_all_scaled","proteome","raw","all","scaled",65.8455232037807,14.7614421259679,0.676258992805755,0.432432432432432
+"pca_phospho_raw_all_scaled","phospho","raw","all","scaled",50.1148616642328,16.023400735433,0.676258992805755,0.432432432432432
+"pca_proteome_log2_top1000_scaled","proteome","log2","top1000","scaled",74.4026321176208,14.1647502590865,1,1
+"pca_phospho_log2_top1000_scaled","phospho","log2","top1000","scaled",71.3534772775025,14.409155533406,1,1
+"pca_proteome_raw_top1000_scaled","proteome","raw","top1000","scaled",81.5572397573851,9.8895339729754,0.676258992805755,0.432432432432432
+"pca_phospho_raw_top1000_scaled","phospho","raw","top1000","scaled",66.702281840015,17.9950124617447,0.676258992805755,0.432432432432432
