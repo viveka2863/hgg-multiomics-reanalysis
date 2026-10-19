@@ -1,0 +1,17 @@
+"layer","linkage","samples","ARI"
+"proteome","ward.D","all 10",1
+"proteome","ward.D","without TRK3",1
+"proteome","ward.D2","all 10",1
+"proteome","ward.D2","without TRK3",1
+"proteome","average","all 10",1
+"proteome","average","without TRK3",1
+"proteome","complete","all 10",1
+"proteome","complete","without TRK3",1
+"phospho","ward.D","all 10",0.676258992805755
+"phospho","ward.D","without TRK3",1
+"phospho","ward.D2","all 10",1
+"phospho","ward.D2","without TRK3",1
+"phospho","average","all 10",1
+"phospho","average","without TRK3",1
+"phospho","complete","all 10",1
+"phospho","complete","without TRK3",1

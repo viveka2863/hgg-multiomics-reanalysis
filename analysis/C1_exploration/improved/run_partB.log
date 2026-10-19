@@ -1,0 +1,98 @@
+[16:18:36] F1: misgrouped samples
+[16:19:19] F2: tumour vs cortex
+[16:19:42] F3: TRK3 profile
+[16:19:42] F4: drop-one specificity (this is the slow part)
+[16:21:32] F5: linkage with and without TRK3
+
+================ SUMMARY (paste this back) ================
+
+Q-F1: misgrouped sample(s) in failing variants (all samples, k = 3):
+    layer transform     misgrouped Freq
+  phospho       raw TRK1+TRK2+TRK3   10
+  phospho      log2           TRK3   11
+ proteome      log2           TRK3    6
+  phospho       raw           TRK3   10
+ proteome       raw           TRK3   20
+  proteome, failing log2 variants: 6; only TRK3 misgrouped in 6 (100%)
+  phospho, failing log2 variants: 11; only TRK3 misgrouped in 11 (100%)
+
+Tumour-only (k = 2) misgrouped sample(s):
+    layer     misgrouped Freq
+  phospho TRK1+TRK2+TRK3   10
+  phospho           TRK3   20
+ proteome           TRK3   26
+
+Q-F2: fraction of variants separating tumour from cortex (ARI = 1):
+    layer transform ARI_tumour_vs_cortex
+  phospho      log2                 0.95
+ proteome      log2                 1.00
+  phospho       raw                 0.90
+ proteome       raw                 0.90
+
+Q-F3: transgene/marker rows, and TRK3 relative to TRK1/TRK2:
+            Protein_Accession    Cortex1    Cortex2     Cortex3        PD1
+                   cu|GFP|GFP   57416.48   62202.58    64115.46  212703.17
+ cu|PDGFRA_D842V|PDGFRA_D842V  176950.69  202927.61   192184.16  904103.95
+           cu|mCherry|mCherry   50817.45   57488.76    57002.38   55340.26
+     cu|TPM3_NTRK1|TMP3_NTRK1 9455250.14 9748548.91 10034320.35 8259072.32
+        PD2        PD3        PD4        TRK1        TRK2        TRK3
+  230453.40  260472.14  293189.45    48038.87    44238.34    46288.92
+  891577.26 1000218.69  969518.01   221416.03   261269.55    48014.88
+   56259.98   55102.87   52507.18   297486.36   307195.97   143293.41
+ 8055912.01 8011961.15 8141668.90 47054000.42 43746153.60 39953704.73
+ TRK3_over_mean_TRK1_TRK2
+                     1.00
+                     0.20
+                     0.47
+                     0.88
+
+TRK3 position index (0 = PDGFRA mean, 1 = TRK1/2 mean):
+    layer TRK3_position_index
+ proteome           0.4853536
+  phospho           0.4440679
+
+Q-F4: fraction of log2 variants with ARI = 1 after dropping each sample ('none' = full data):
+ dropped    layer n_variants fraction_ARI1 mean_ARI
+    none proteome         20          0.70    0.903
+    none  phospho         20          0.45    0.822
+ Cortex1 proteome         20          0.70    0.883
+ Cortex1  phospho         20          0.50    0.804
+ Cortex2 proteome         20          0.70    0.883
+ Cortex2  phospho         20          0.50    0.804
+ Cortex3 proteome         20          0.70    0.883
+ Cortex3  phospho         20          0.50    0.804
+     PD1 proteome         20          0.40    0.786
+     PD1  phospho         20          0.30    0.750
+     PD2 proteome         20          0.15    0.696
+     PD2  phospho         20          0.20    0.714
+     PD3 proteome         20          0.50    0.821
+     PD3  phospho         20          0.20    0.714
+     PD4 proteome         20          0.60    0.857
+     PD4  phospho         20          0.35    0.768
+    TRK1 proteome         20          0.80    0.937
+    TRK1  phospho         20          0.50    0.842
+    TRK2 proteome         20          0.95    0.984
+    TRK2  phospho         20          1.00    1.000
+    TRK3 proteome         20          1.00    1.000
+    TRK3  phospho         20          1.00    1.000
+
+Q-F5: paper-setup linkage, with and without TRK3:
+    layer  linkage      samples   ARI
+ proteome   ward.D       all 10 1.000
+ proteome   ward.D without TRK3 1.000
+ proteome  ward.D2       all 10 1.000
+ proteome  ward.D2 without TRK3 1.000
+ proteome  average       all 10 1.000
+ proteome  average without TRK3 1.000
+ proteome complete       all 10 1.000
+ proteome complete without TRK3 1.000
+  phospho   ward.D       all 10 0.676
+  phospho   ward.D without TRK3 1.000
+  phospho  ward.D2       all 10 1.000
+  phospho  ward.D2 without TRK3 1.000
+  phospho  average       all 10 1.000
+  phospho  average without TRK3 1.000
+  phospho complete       all 10 1.000
+  phospho complete without TRK3 1.000
+
+Outputs written to analysis/C1_exploration/improved and results/metrics.csv
