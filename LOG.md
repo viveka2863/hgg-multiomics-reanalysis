@@ -124,3 +124,9 @@ Prior knowledge and its source: (1) the repeated ARI values in the C1 run.log (0
 - Q-F3 (TRK3 profile): per-sample transgene/marker rows (GFP, mCherry, PDGFRA_D842V, TPM3-NTRK1) from HGG_whl_input, and TRK3's position along the PDGFRA-to-TRK1/2 axis in tumour-only PCA (0 = PDGFRA mean, 1 = TRK1/2 mean).
 - Q-F4 (specificity): fraction of log2 variants (all samples, k = 3) with ARI = 1 after dropping each single sample. TRK3 is "atypical" if dropping it raises the fraction by >= 0.25 over full data in both layers and gives the highest fraction of all ten drops.
 - Q-F5: paper-setup linkage (log2, top-1000, Euclidean z): ARI for ward.D, ward.D2, average, complete, with and without TRK3.
+
+## Figure fixes for the final pass (cosmetic; numbers unaffected)
+- C1 part B c1b_tumour_positions: overlapping sample labels (stagger label heights).
+- C3 group_profiles: legend sits over some points in the lower-left corner (move legend to "bottom").
+- C5 fig1_coded_vs_all10_effect: axis label says "log2-scale IKAP"; the repo does not state the IKAP scale (relabel "IKAP activity units").
+- C3 pairwise_ari_heatmap: colour scale is clipped at 0.7-1; say so in the caption.
