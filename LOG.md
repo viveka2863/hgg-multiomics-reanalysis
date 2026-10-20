@@ -312,3 +312,22 @@ Universes: own = genes detected in the proteome; U1 = all mouse symbols in the o
 - Q-F CRISPR (descriptive, n = 5): rank (1 = best of the 115 TFs by ORA p) of JUN and MYC (hits) and JUND, EP300, BRCA1 (non-hits), under own, U1 and U3.
 - Out of scope: transcript-level activity; the paper's 47-TF list; TF protein/phospho filtering.
 - Verdict rule: C6a = Q-A; C6b = Q-B; C6c = Q-C and Q-E.
+
+## 2026-10-21 C6 RESULTS (scripts: analysis/C6_tf_activity/original/c6_qa.R, improved/c6_main.R; design unchanged from the pre-registration)
+Verified by data (all numbers from the committed CSVs; BH < 0.05 = enriched; TFs with >= 5 targets in the universe: 111 own, 112 U1/U3):
+- Mapping: 20,920 of 26,070 human target symbols (80.2%) have a mouse ortholog; median 102 mapped targets per TF in own universe; all 23 benchmark TFs have >= 5. Universes: own 11,717 genes, U1 16,795, U3 7,568. Protein list gene counts (own/U1/U3): anova_perm 4,754/4,155/2,199; DE_all10 484/421/184; DE_noTRK3 742/656/309.
+- Q-A (own, anova_perm list): 4 TFs enriched (E2F4, REST, STAT1, STAT2), 3 of them benchmark (E2F4, REST, STAT2); AUC 0.726, size-only AUC 0.623 (difference 0.103, just above the 0.1 margin); hypergeometric p of benchmark vs enriched overlap 0.0275. Pre-registered rule gives "supported" (AUC >= 0.7 and margin >= 0.1), but the margin is 0.003 above the cut.
+- Q-B (same list): AUC own 0.726, U1 0.750, U3 0.722, so all >= 0.7 (robust by rule). The number enriched changes a lot: 4 (own), 26 (U1; 11 benchmark), 6 (U3); Jaccard of enriched TFs own-U1 0.154, own-U3 0.667, U1-U3 0.231.
+- Q-C (own): DE_all10 AUC 0.512, 5 enriched (1 benchmark: RAD21); DE_noTRK3 AUC 0.659, 5 enriched (2 benchmark). Jaccard of enriched TFs with vs without TRK3 = 0.667 (4 shared of 6). Both genotype lists fall below 0.7 in every universe (0.51-0.53 all10; 0.66-0.68 noTRK3).
+- Q-D: ORA (anova_perm list) 4 enriched, AUC 0.726; FCS 7 enriched (BCL3, E2F4, RFX5, SPI1, STAT1, STAT2, TAF1), AUC 0.784; Jaccard 0.375 (< 0.8, so they do not agree). Supplementary ORA on the limma F list gives the same 4 TFs as the anova_perm list (AUC 0.722).
+- Q-E: AUC per run 0.671-0.758; >= 0.7 in 8 of 10 runs (fails TRK1 0.694 and TRK2 0.671), so not stable by the rule (needs 9 of 10). TRK3-dropped run: AUC 0.758, 5 enriched.
+- Q-F (rank of 111/112 TFs by ORA p, own/U1/U3): MYC 21/6/9 (U1 BH 8e-6, U3 BH 0.065, own BH 0.48); JUN 37/53/64; JUND 69/56/81; EP300 84/49/79; BRCA1 65/45/43. With n = 5 this is descriptive only.
+Checks run in the scripts: the limma F protein list re-derived from the matrix equals the C2 flag limma_F_FC1.5_FDR0.05 (asserted); gene-level statistic names equal the own universe (asserted); the 23 benchmark names match 23 files (asserted).
+Assumed (not verified): the benchmark list was typed from the pre-registration, not re-read from the paper; FCS applies only to the own universe because the gene-level statistic exists only for detected genes; AUC and ranks are over TFs passing the >= 5-target filter in the universe, so n differs by 1 between own and U1/U3; Q-F ranks use ties.method = "min" and the anova_perm list; Q-D ORA arm uses the Q-A list (the pre-registration did not name it); in Q-E the own universe is the full detected-gene set in every run. U1 mostly consists of genes outside the proteome, which inflates the number of enriched TFs (26); this is reported, not corrected.
+Fixes to my own code: (1) the row-name warning in the universe-size table (added unname); the first `sed -i` for it failed on macOS (BSD sed) and was redone with `sed -i ''`; no result changed. No other fixes; no tuning.
+Not committed. git status --short JUMPn JUMPp is empty.
+
+## 2026-10-21 C6 verification and verdict
+- Verified from the committed tables: Q-A (4 enriched: E2F4, REST, STAT2 from the benchmark, STAT1; AUC 0.7258 vs size-only 0.6233; p 0.0275), Q-B (AUC 0.726 / 0.750 / 0.722; enriched 4 / 26 / 6; Jaccard 0.154 and 0.667), Q-C (AUC 0.512 and 0.659; lists of 484 and 742 genes), Q-D (Jaccard 0.375; FCS AUC 0.784), Q-E (8/10 runs >= 0.7), Q-F ranks.
+- Verdict: C6a supported by the rule (thin margin; partly target-set size); C6b robust in ranking, method-dependent in lists; C6c not supported and not stable (low power for the genotype lists).
+- Pattern across claims: leave-one-out failures occur when TRK1 or TRK2 is dropped (C1, C5, C8, C6), and dropping TRK3 never hurts.

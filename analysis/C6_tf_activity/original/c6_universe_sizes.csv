@@ -1,0 +1,10 @@
+"universe","n_genes","list","n_list_genes"
+"own",11717,"anova_perm_FC1.5_FDR0.05",4754
+"U1",16795,"anova_perm_FC1.5_FDR0.05",4155
+"U3",7568,"anova_perm_FC1.5_FDR0.05",2199
+"own",11717,"DE_all10",484
+"U1",16795,"DE_all10",421
+"U3",7568,"DE_all10",184
+"own",11717,"DE_noTRK3",742
+"U1",16795,"DE_noTRK3",656
+"U3",7568,"DE_noTRK3",309

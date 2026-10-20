@@ -1,0 +1,4 @@
+"comparison","jaccard","n_a","n_b"
+"Q-C: DE_all10 vs DE_noTRK3 (ORA, own)",0.666666666666667,5,5
+"Q-D: ORA(anova_perm list) vs FCS (own)",0.375,4,7
+"Q-D: ORA(limma_F list) vs FCS (own)",0.375,4,7

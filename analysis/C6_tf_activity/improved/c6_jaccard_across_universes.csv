@@ -1,0 +1,10 @@
+"list","pair","jaccard"
+"anova_perm_FC1.5_FDR0.05","own-U1",0.153846153846154
+"anova_perm_FC1.5_FDR0.05","own-U3",0.666666666666667
+"anova_perm_FC1.5_FDR0.05","U1-U3",0.230769230769231
+"DE_all10","own-U1",0.8
+"DE_all10","own-U3",0.8
+"DE_all10","U1-U3",1
+"DE_noTRK3","own-U1",0.8
+"DE_noTRK3","own-U3",0.6
+"DE_noTRK3","U1-U3",0.75
