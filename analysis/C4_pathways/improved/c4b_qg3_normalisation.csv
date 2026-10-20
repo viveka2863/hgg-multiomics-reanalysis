@@ -1,0 +1,2 @@
+"reference","n_genes_unnormalised","n_genes_normalised","n_sets_tested","n_enriched_unnormalised","n_enriched_normalised","n_both","jaccard","spearman_neglog10p","agree"
+"U1",2139,1627,186,41,32,30,0.697674418604651,0.912318073857087,FALSE

@@ -1,0 +1,13 @@
+"reference","n_ref","list","n_list","n_in_ref"
+"U1",16795,"detected_proteome",11717,10307
+"U1",16795,"detected_phospho",5421,4877
+"U1",16795,"DE_proteome",4754,4155
+"U1",16795,"DE_phospho",2354,2126
+"U1",16795,"DE_phospho_unnorm",2355,2139
+"U1",16795,"DE_phospho_norm",1782,1627
+"U2",4823,"detected_proteome",11717,3274
+"U2",4823,"detected_phospho",5421,1458
+"U2",4823,"DE_proteome",4754,1402
+"U2",4823,"DE_phospho",2354,608
+"U2",4823,"DE_phospho_unnorm",2355,621
+"U2",4823,"DE_phospho_norm",1782,489

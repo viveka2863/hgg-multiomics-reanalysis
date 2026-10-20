@@ -219,3 +219,22 @@ Reference sets: U1 = all mouse symbols in the ortholog table (16,795); U2 = the 
 - Q-G3 Normalisation at pathway level under V8: ORA of unnormalised vs normalised phospho DE lists, all sets; Jaccard of enriched sets (agree if >= 0.8) and Spearman of -log10 p.
 - Q-G4 Stability under V8: leave-one-sample-out (10 runs, limma F lists at the C2 thresholds); stable if the claim holds in >= 9 of 10 runs.
 - Interpretation rule: "reference-dependent" if the claim holds under V8 or V9 while it fails under main, V1, V2 and V3; "explained by detection bias" if in addition Q-G1 is supported.
+
+## 2026-10-20 C4 part B RESULTS (exploratory; design as pre-registered above, not changed)
+Scripts: analysis/C4_pathways/improved/c4b_reference.R (Q-G1..Q-G3, figs 1-2), c4b_loo.R (Q-G4, fig 3). Outputs c4b_*.csv/png/pdf there; metrics rows "partB_*"; env/sessionInfo_C4b.txt. set.seed(1).
+Reference sizes: U1 = 16,795 mouse symbols; U2 = 4,823 mouse genes in the 186 KEGG sets. Genes in reference: detected proteome 10,307/11,717 (U1), 3,274 (U2); detected phospho 4,877/5,421 (U1), 1,458 (U2); DE proteome 4,155 (U1), 1,402 (U2); DE phospho 2,126 (U1), 608 (U2). All 9 S_wide sets keep >= 5 genes in both references (none dropped). BH over 186 sets within each list.
+- Q-G1 (detection control, U1): S_wide enriched among ALL detected phospho genes 8/9, among ALL detected proteome genes 8/9 (U2: 7/9 vs 5/9). Registered rule needs proteome < half of phospho: NOT met. Detection bias NOT supported as registered: any detected gene set, phospho or proteome, is enriched for signalling sets against a genome-wide reference, so detection bias is not specific to phospho.
+- Q-G2: main 0 enriched (claim fails, reproduces committed c4 classification, asserted). V8 (U1): 7 enriched, 5 phospho-only, 1 proteome-only (P53), 1 both (MAPK), share 0.71, claim holds. V9 (U2): 6 enriched, all phospho-only, share 1.00, claim holds.
+- Q-G3 (V8): 41 vs 32 enriched sets (unnormalised vs normalised), 30 shared, Jaccard 0.70 (< 0.8, not agree), Spearman 0.91.
+- Q-G4 (V8 leave-one-out): claim holds in 10/10 runs (stable); 6-7 S_wide sets enriched per run; all-10 limma-F run also holds.
+- Interpretation rule: claim holds under V8/V9 while failing under main, V1-V3 (per C4 Q-B) -> "reference-dependent". "Explained by detection bias" requires Q-G1 supported: it is not, so that label is NOT assigned.
+Verified by data: all numbers above (scripts). Main classification reproduced against the committed CSV by assertion.
+Assumed / not verified: (a) the paper's reference set is unknown; U1 and U2 are our choices. (b) U1 is limited by the ortholog table: 1,410 detected proteome and 544 detected phospho genes have no entry and are dropped from lists under V8/V9, whereas main keeps them in the background. Lead, NOT tested and not pre-registered: part of the main-vs-V8 difference may come from unmappable genes inflating the main background rather than from the reference choice itself. (c) U2 is built from the same sets being tested, which is circular for enrichment, so V9 is the less trustworthy reference. (d) Part B is exploratory; the V8/V9 significance is conditional on the reference choice.
+Fixes to own code: none needed after the first run (no reruns of the scripts besides the first execution of each).
+
+## 2026-10-20 C4 part B verification and interpretation
+- Verified from the committed tables: Q-G1 (U1: 8/9 S_wide sets enriched among detected phospho genes and 8/9 among detected proteome genes; U2: 7/9 vs 5/9), Q-G2 (main 0; V8 7 enriched, 5 phospho-only, 1 proteome-only, 1 both, share 0.71; V9 6, all phospho-only), Q-G3 (Jaccard 0.698, Spearman 0.912), Q-G4 (10/10 runs).
+- Pre-registered outcome: reference-dependent; not "explained by detection bias" (Q-G1 rule not met).
+- Post hoc (not pre-registered; script c4b_fold_enrichment.R, prompted by seeing that the count rule compares lists of very different size): median fold enrichment of the 9 S_wide sets among all detected genes under U1 is 1.87 (phospho) vs 1.33 (proteome); across all 186 sets the medians are 1.04 (phospho) and 1.26 (proteome); phospho fold exceeds proteome fold in 8 of 9 sets. Interpretation: detected phosphoproteins are specifically rich in signalling sets; the proteome enrichment is generic.
+- Verdict: C4b reference-dependent; C4c partly supported under U1 (Jaccard 0.70, Spearman 0.91).
+- Not tested: whether the main-vs-V8 gap is partly caused by dropping genes without ortholog entries (control: restrict the main background to ortholog-table genes).

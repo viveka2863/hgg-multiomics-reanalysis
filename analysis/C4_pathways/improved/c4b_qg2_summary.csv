@@ -1,0 +1,4 @@
+"n_enriched_either","n_phospho_only","n_proteome_only","n_both","phospho_only_share","claim_holds","variant"
+0,0,0,0,NA,FALSE,"main"
+7,5,1,1,0.714285714285714,TRUE,"V8_U1"
+6,6,0,0,1,TRUE,"V9_U2"
