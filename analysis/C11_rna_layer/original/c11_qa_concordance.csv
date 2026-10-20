@@ -1,0 +1,16 @@
+"layer_a","layer_b","protein_source","contrast","n_genes","spearman","n_both_abs_ge1","sign_agree_abs_ge1","concordance_rule_applies","meets_0.5"
+"RNA","protein","paper_SD1","NTRK_PDGFRA",11168,0.648916734563613,127,1,FALSE,TRUE
+"RNA","protein","paper_SD1","NTRK_Cortex",11168,0.702281380566832,1209,0.990901571546733,TRUE,TRUE
+"RNA","protein","paper_SD1","PDGFRA_Cortex",11168,0.696498040261243,427,0.990632318501171,TRUE,TRUE
+"phospho_best_site","protein","paper_SD1","NTRK_PDGFRA",5086,0.61287161036821,45,1,FALSE,TRUE
+"phospho_best_site","protein","paper_SD1","NTRK_Cortex",5086,0.663480819821107,585,0.972649572649573,TRUE,TRUE
+"phospho_best_site","protein","paper_SD1","PDGFRA_Cortex",5086,0.660141950641789,162,1,TRUE,TRUE
+"RNA","protein","ours_rescaled_all10","NTRK_PDGFRA",11166,0.667053238621574,91,1,FALSE,TRUE
+"RNA","protein","ours_rescaled_all10","NTRK_Cortex",11166,0.70693137141441,962,0.992723492723493,TRUE,TRUE
+"RNA","protein","ours_rescaled_all10","PDGFRA_Cortex",11166,0.696518004360418,418,0.990430622009569,TRUE,TRUE
+"phospho_best_site","protein","ours_rescaled_all10","NTRK_PDGFRA",5085,0.598203123180241,29,1,FALSE,TRUE
+"phospho_best_site","protein","ours_rescaled_all10","NTRK_Cortex",5085,0.65949387589573,463,0.976241900647948,TRUE,TRUE
+"phospho_best_site","protein","ours_rescaled_all10","PDGFRA_Cortex",5085,0.660608800008909,159,1,TRUE,TRUE
+"RNA","phospho_best_site","paper_SD2a","NTRK_PDGFRA",5235,0.482651627430214,185,0.983783783783784,FALSE,FALSE
+"RNA","phospho_best_site","paper_SD2a","NTRK_Cortex",5235,0.54613960841498,1107,0.92773261065944,FALSE,TRUE
+"RNA","phospho_best_site","paper_SD2a","PDGFRA_Cortex",5235,0.537624475757144,616,0.957792207792208,FALSE,TRUE

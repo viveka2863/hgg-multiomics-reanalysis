@@ -1,0 +1,7 @@
+"definition","ratio_column","role","cortex_subset","pdgfra_subset","ntrk_subset","n_cortex","n_pdgfra","n_ntrk","median_abs_diff_best","median_abs_diff_all_samples","improvement","n_tied_best_step","best_equals_full_groups","within_0.005_of_all","runtime_seconds_enumeration"
+"log2_ratio_of_means","PDGFRA_Cortex","fitted (step 1)","1+2+3+4","5+6+7+8+9+10+11","12+13+14+15+16+17+18",4,7,7,3.20342650381492e-16,3.20342650381492e-16,0,1,TRUE,TRUE,7.802
+"log2_ratio_of_means","NTRK_Cortex","fitted (step 2)","1+2+3+4","5+6+7+8+9+10+11","12+13+14+15+16+17+18",4,7,7,3.20342650381492e-16,3.20342650381492e-16,0,1,TRUE,TRUE,7.802
+"log2_ratio_of_means","NTRK_PDGFRA","check","1+2+3+4","5+6+7+8+9+10+11","12+13+14+15+16+17+18",4,7,7,0,0,0,NA,TRUE,TRUE,7.802
+"mean_of_log2","PDGFRA_Cortex","fitted (step 1)","1+2+3+4","5+6+7+8+9+10+11","12+13+14+15+16+17+18",4,7,7,0.00369763350339269,0.00369763350339269,0,1,TRUE,TRUE,7.802
+"mean_of_log2","NTRK_Cortex","fitted (step 2)","1+2+3+4","5+6+7+8+9+10+11","12+13+14+15+16+17+18",4,7,7,0.00493592243236929,0.00493592243236929,0,1,TRUE,TRUE,7.802
+"mean_of_log2","NTRK_PDGFRA","check","1+2+3+4","5+6+7+8+9+10+11","12+13+14+15+16+17+18",4,7,7,0.003727908074878,0.003727908074878,0,NA,TRUE,TRUE,7.802

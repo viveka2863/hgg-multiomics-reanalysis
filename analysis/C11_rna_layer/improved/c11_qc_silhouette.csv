@@ -1,0 +1,11 @@
+"samples","labels","level","silhouette"
+"all 18","group","overall",0.604659048005464
+"all 18","group","Cortex",0.874693520064011
+"all 18","group","NTRK",0.561126798007794
+"all 18","group","PDGFRA",0.49388588539825
+"tumour 14","group","overall",0.591147997541621
+"tumour 14","group","NTRK",0.593656158395596
+"tumour 14","group","PDGFRA",0.588639836687647
+"tumour 14","batch","overall",-0.0314595654562564
+"tumour 14","batch","1",-0.056694768195582
+"tumour 14","batch","2",-0.0125331634017623

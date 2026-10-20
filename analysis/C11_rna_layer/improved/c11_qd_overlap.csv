@@ -1,0 +1,2 @@
+"n_enriched_rna","n_enriched_protein","n_both","jaccard","n_bench_in_both","recall_of_23_in_intersection","n_bench_tested_rna","n_bench_tested_protein","tfs_both","bench_in_both","bench_enriched_rna","bench_enriched_protein"
+5,4,2,0.285714285714286,2,0.0869565217391304,23,23,"E2F4;REST","E2F4;REST","E2F4;RAD21;REST","E2F4;REST;STAT2"

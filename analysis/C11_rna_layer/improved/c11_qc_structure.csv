@@ -1,0 +1,8 @@
+"quantity","value"
+"n_genes_top_MAD_all18",1000
+"PC1_variance_pct",70.0364504053433
+"PC2_variance_pct",20.8463778628303
+"ARI_ward_k3_vs_group_all18",1
+"ARI_ward_k2_vs_batch_tumour14",-0.0814940577249576
+"ARI_ward_k2_vs_genotype_tumour14",1
+"batch_driven (ARI batch >= ARI genotype)",0

@@ -1101,3 +1101,80 @@
 "C10","QD_leave_one_out","runs_median_ge_0.65",9,10
 "C10","QD_leave_one_out","min_median_auc",0.64999900103892,10
 "C10","QD_leave_one_out","max_median_auc",0.662237056693479,10
+"C11","QA_RNA_vs_protein_paper_SD1_NTRK_PDGFRA","spearman",0.648916734563613,11168
+"C11","QA_RNA_vs_protein_paper_SD1_NTRK_PDGFRA","sign_agree_abs_ge1",1,127
+"C11","QA_RNA_vs_protein_paper_SD1_NTRK_Cortex","spearman",0.702281380566832,11168
+"C11","QA_RNA_vs_protein_paper_SD1_NTRK_Cortex","sign_agree_abs_ge1",0.990901571546733,1209
+"C11","QA_RNA_vs_protein_paper_SD1_PDGFRA_Cortex","spearman",0.696498040261243,11168
+"C11","QA_RNA_vs_protein_paper_SD1_PDGFRA_Cortex","sign_agree_abs_ge1",0.990632318501171,427
+"C11","QA_phospho_best_site_vs_protein_paper_SD1_NTRK_PDGFRA","spearman",0.61287161036821,5086
+"C11","QA_phospho_best_site_vs_protein_paper_SD1_NTRK_PDGFRA","sign_agree_abs_ge1",1,45
+"C11","QA_phospho_best_site_vs_protein_paper_SD1_NTRK_Cortex","spearman",0.663480819821107,5086
+"C11","QA_phospho_best_site_vs_protein_paper_SD1_NTRK_Cortex","sign_agree_abs_ge1",0.972649572649573,585
+"C11","QA_phospho_best_site_vs_protein_paper_SD1_PDGFRA_Cortex","spearman",0.660141950641789,5086
+"C11","QA_phospho_best_site_vs_protein_paper_SD1_PDGFRA_Cortex","sign_agree_abs_ge1",1,162
+"C11","QA_RNA_vs_protein_ours_rescaled_all10_NTRK_PDGFRA","spearman",0.667053238621574,11166
+"C11","QA_RNA_vs_protein_ours_rescaled_all10_NTRK_PDGFRA","sign_agree_abs_ge1",1,91
+"C11","QA_RNA_vs_protein_ours_rescaled_all10_NTRK_Cortex","spearman",0.70693137141441,11166
+"C11","QA_RNA_vs_protein_ours_rescaled_all10_NTRK_Cortex","sign_agree_abs_ge1",0.992723492723493,962
+"C11","QA_RNA_vs_protein_ours_rescaled_all10_PDGFRA_Cortex","spearman",0.696518004360418,11166
+"C11","QA_RNA_vs_protein_ours_rescaled_all10_PDGFRA_Cortex","sign_agree_abs_ge1",0.990430622009569,418
+"C11","QA_phospho_best_site_vs_protein_ours_rescaled_all10_NTRK_PDGFRA","spearman",0.598203123180241,5085
+"C11","QA_phospho_best_site_vs_protein_ours_rescaled_all10_NTRK_PDGFRA","sign_agree_abs_ge1",1,29
+"C11","QA_phospho_best_site_vs_protein_ours_rescaled_all10_NTRK_Cortex","spearman",0.65949387589573,5085
+"C11","QA_phospho_best_site_vs_protein_ours_rescaled_all10_NTRK_Cortex","sign_agree_abs_ge1",0.976241900647948,463
+"C11","QA_phospho_best_site_vs_protein_ours_rescaled_all10_PDGFRA_Cortex","spearman",0.660608800008909,5085
+"C11","QA_phospho_best_site_vs_protein_ours_rescaled_all10_PDGFRA_Cortex","sign_agree_abs_ge1",1,159
+"C11","QA_RNA_vs_phospho_best_site_paper_SD2a_NTRK_PDGFRA","spearman",0.482651627430214,5235
+"C11","QA_RNA_vs_phospho_best_site_paper_SD2a_NTRK_PDGFRA","sign_agree_abs_ge1",0.983783783783784,185
+"C11","QA_RNA_vs_phospho_best_site_paper_SD2a_NTRK_Cortex","spearman",0.54613960841498,5235
+"C11","QA_RNA_vs_phospho_best_site_paper_SD2a_NTRK_Cortex","sign_agree_abs_ge1",0.92773261065944,1107
+"C11","QA_RNA_vs_phospho_best_site_paper_SD2a_PDGFRA_Cortex","spearman",0.537624475757144,5235
+"C11","QA_RNA_vs_phospho_best_site_paper_SD2a_PDGFRA_Cortex","sign_agree_abs_ge1",0.957792207792208,616
+"C11","QA_decision_paper_SD1","n_meeting_spearman_0.5_of_4",4,4
+"C11","QA_decision_ours_rescaled_all10","n_meeting_spearman_0.5_of_4",4,4
+"C11","QB_seq_log2_ratio_of_means_PDGFRA_Cortex","median_abs_diff_best",3.20342650381492e-16,21943
+"C11","QB_seq_log2_ratio_of_means_PDGFRA_Cortex","median_abs_diff_all_samples",3.20342650381492e-16,21943
+"C11","QB_seq_log2_ratio_of_means_PDGFRA_Cortex","within_0.005_of_all_or_full",1,1
+"C11","QB_seq_log2_ratio_of_means_NTRK_Cortex","median_abs_diff_best",3.20342650381492e-16,21943
+"C11","QB_seq_log2_ratio_of_means_NTRK_Cortex","median_abs_diff_all_samples",3.20342650381492e-16,21943
+"C11","QB_seq_log2_ratio_of_means_NTRK_Cortex","within_0.005_of_all_or_full",1,1
+"C11","QB_seq_log2_ratio_of_means_NTRK_PDGFRA","median_abs_diff_best",0,21943
+"C11","QB_seq_log2_ratio_of_means_NTRK_PDGFRA","median_abs_diff_all_samples",0,21943
+"C11","QB_seq_log2_ratio_of_means_NTRK_PDGFRA","within_0.005_of_all_or_full",1,1
+"C11","QB_seq_mean_of_log2_PDGFRA_Cortex","median_abs_diff_best",0.00369763350339269,21943
+"C11","QB_seq_mean_of_log2_PDGFRA_Cortex","median_abs_diff_all_samples",0.00369763350339269,21943
+"C11","QB_seq_mean_of_log2_PDGFRA_Cortex","within_0.005_of_all_or_full",1,1
+"C11","QB_seq_mean_of_log2_NTRK_Cortex","median_abs_diff_best",0.00493592243236929,21943
+"C11","QB_seq_mean_of_log2_NTRK_Cortex","median_abs_diff_all_samples",0.00493592243236929,21943
+"C11","QB_seq_mean_of_log2_NTRK_Cortex","within_0.005_of_all_or_full",1,1
+"C11","QB_seq_mean_of_log2_NTRK_PDGFRA","median_abs_diff_best",0.003727908074878,21943
+"C11","QB_seq_mean_of_log2_NTRK_PDGFRA","median_abs_diff_all_samples",0.003727908074878,21943
+"C11","QB_seq_mean_of_log2_NTRK_PDGFRA","within_0.005_of_all_or_full",1,1
+"C11","QB_runtime","seconds",7.802,241935
+"C11","QC_n_genes_top_MAD_all18","value",1000,18
+"C11","QC_PC1_variance_pct","value",70.0364504053433,18
+"C11","QC_PC2_variance_pct","value",20.8463778628303,18
+"C11","QC_ARI_ward_k3_vs_group_all18","value",1,18
+"C11","QC_ARI_ward_k2_vs_batch_tumour14","value",-0.0814940577249576,14
+"C11","QC_ARI_ward_k2_vs_genotype_tumour14","value",1,14
+"C11","QC_batch_driven","ARI_batch_ge_ARI_genotype",0,14
+"C11","QC_silhouette all 18 group overall","silhouette",0.604659048005464,18
+"C11","QC_silhouette all 18 group Cortex","silhouette",0.874693520064011,18
+"C11","QC_silhouette all 18 group NTRK","silhouette",0.561126798007794,18
+"C11","QC_silhouette all 18 group PDGFRA","silhouette",0.49388588539825,18
+"C11","QC_silhouette tumour 14 group overall","silhouette",0.591147997541621,14
+"C11","QC_silhouette tumour 14 group NTRK","silhouette",0.593656158395596,14
+"C11","QC_silhouette tumour 14 group PDGFRA","silhouette",0.588639836687647,14
+"C11","QC_silhouette tumour 14 batch overall","silhouette",-0.0314595654562564,14
+"C11","QC_silhouette tumour 14 batch 1","silhouette",-0.056694768195582,14
+"C11","QC_silhouette tumour 14 batch 2","silhouette",-0.0125331634017623,14
+"C11","QD_RNA","AUC",0.714920948616601,111
+"C11","QD_RNA","AUC_size_only",0.634881422924901,111
+"C11","QD_RNA","n_enriched",5,111
+"C11","QD_RNA","n_bench_enriched",3,23
+"C11","QD_RNA","n_de_genes",9960,15789
+"C11","QD_protein_C6","AUC",0.725790513833992,111
+"C11","QD_overlap","jaccard_enriched_TFs",0.285714285714286,7
+"C11","QD_overlap","recall_of_23_in_intersection",0.0869565217391304,23
+"C11","QD_overlap","n_enriched_both",2,7
