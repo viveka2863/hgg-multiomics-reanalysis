@@ -1,0 +1,7 @@
+"layer","comparison","n_sets_ora","n_sets_other","n_enriched_ora","n_enriched_other","n_both","jaccard","spearman_neglog10p","agree"
+"proteome","ORA_vs_FCS",185,185,25,28,17,0.472222222222222,0.783692898316523,FALSE
+"proteome","ORA_vs_GSEA",185,185,25,24,12,0.324324324324324,0.738982557742157,FALSE
+"proteome","FCS_vs_GSEA",NA,NA,28,24,18,0.529411764705882,NA,FALSE
+"phospho","ORA_vs_FCS",143,143,0,0,0,NA,0.840602292238237,FALSE
+"phospho","ORA_vs_GSEA",143,143,0,0,0,NA,0.715440260028173,FALSE
+"phospho","FCS_vs_GSEA",NA,NA,0,0,0,NA,NA,FALSE

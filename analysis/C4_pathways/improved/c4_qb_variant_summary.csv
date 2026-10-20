@@ -1,0 +1,9 @@
+"variant","description","threshold","n_enriched_all_proteome","n_enriched_all_phospho","n_enriched_either","n_phospho_only","n_proteome_only","n_both","phospho_only_share","claim_holds"
+"main","ORA, own backgrounds, BH<0.05, anova_perm lists",0.05,25,0,0,0,0,0,NA,FALSE
+"V1_common_bg","background = genes measured in both layers; lists restricted to it",0.05,7,0,0,0,0,0,NA,FALSE
+"V2_size_matched","top-2354 genes by -log10(limma F adj.P) in each layer",0.05,12,0,0,0,0,0,NA,FALSE
+"V3_phospho_normalised","phospho list = DE after normalisation to protein (limma F, FC2, adj.P<0.05)",0.05,25,0,0,0,0,0,NA,FALSE
+"V4_FCS","Wilcoxon rank-sum FCS on -log10(limma F adj.P)",0.05,28,0,1,0,1,0,0,FALSE
+"V5_GSEA","fgsea preranked (scoreType pos), same statistic",0.05,24,0,1,0,1,0,0,FALSE
+"V6_BH0.2","main-setting ORA, BH<0.2",0.2,37,0,0,0,0,0,NA,FALSE
+"V7_uppercase","mouse symbols upper-cased, matched to human symbols",0.05,12,0,0,0,0,0,NA,FALSE

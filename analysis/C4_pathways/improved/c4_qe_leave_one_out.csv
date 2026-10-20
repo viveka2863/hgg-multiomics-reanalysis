@@ -1,0 +1,12 @@
+"left_out","n_samples","n_DE_genes_proteome","n_DE_genes_phospho","n_enriched_all_proteome","n_enriched_all_phospho","n_enriched_either","n_phospho_only","n_proteome_only","n_both","phospho_only_share","claim_holds","is_TRK3_run"
+"none (all 10, limma F)",10,4828,2441,23,0,0,0,0,0,NA,FALSE,FALSE
+"PD1",9,4807,2432,21,0,0,0,0,0,NA,FALSE,FALSE
+"PD2",9,4825,2449,22,0,0,0,0,0,NA,FALSE,FALSE
+"PD3",9,4824,2439,21,0,0,0,0,0,NA,FALSE,FALSE
+"PD4",9,4938,2540,24,0,0,0,0,0,NA,FALSE,FALSE
+"TRK1",9,4496,2262,19,0,0,0,0,0,NA,FALSE,FALSE
+"TRK2",9,4507,2349,20,0,0,0,0,0,NA,FALSE,FALSE
+"TRK3",9,5447,2744,22,0,0,0,0,0,NA,FALSE,TRUE
+"Cortex1",9,4707,2361,18,0,0,0,0,0,NA,FALSE,FALSE
+"Cortex2",9,4850,2437,23,0,0,0,0,0,NA,FALSE,FALSE
+"Cortex3",9,4839,2456,20,0,0,0,0,0,NA,FALSE,FALSE
