@@ -1,0 +1,11 @@
+"matrix","paper_sample_no","best_repo_column","median_abs_log2_diff_best","expected_repo_column","as_expected"
+"SD2a_vs_pho_hgg_uniq_v5",1,"Cortex1",1.9186696675888e-10,"Cortex1",TRUE
+"SD2a_vs_pho_hgg_uniq_v5",2,"Cortex2",1.9177814891691e-10,"Cortex2",TRUE
+"SD2a_vs_pho_hgg_uniq_v5",3,"Cortex3",1.89757543012092e-10,"Cortex3",TRUE
+"SD2a_vs_pho_hgg_uniq_v5",4,"PD1",0.176656573985991,"PD1",TRUE
+"SD2a_vs_pho_hgg_uniq_v5",5,"PD2",0.176656573986058,"PD2",TRUE
+"SD2a_vs_pho_hgg_uniq_v5",6,"PD3",0.176656573986286,"PD3",TRUE
+"SD2a_vs_pho_hgg_uniq_v5",7,"PD4",0.176656573986512,"PD4",TRUE
+"SD2a_vs_pho_hgg_uniq_v5",8,"TRK1",0.176561648180051,"TRK1",TRUE
+"SD2a_vs_pho_hgg_uniq_v5",9,"TRK2",0.176561648179281,"TRK2",TRUE
+"SD2a_vs_pho_hgg_uniq_v5",10,"TRK3",0.176656573925435,"TRK3",TRUE

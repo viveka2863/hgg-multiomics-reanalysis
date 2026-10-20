@@ -1,0 +1,5 @@
+"test","p","lt_0.05","C1_agrees","verdict"
+"sign",0.0169005393981934,TRUE,TRUE,"method-dependent"
+"wilcoxon",0.0208582878112793,TRUE,TRUE,"method-dependent"
+"boot_a",0.0027,TRUE,TRUE,"method-dependent"
+"boot_b",0.0915,FALSE,TRUE,"method-dependent"

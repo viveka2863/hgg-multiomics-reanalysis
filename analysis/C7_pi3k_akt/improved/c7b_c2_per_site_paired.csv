@@ -1,0 +1,14 @@
+"quantity","value"
+"n_sites",22
+"n_positive",17
+"n_nonzero",22
+"mean_d",0.309205280010513
+"median_d",0.428840335889652
+"boot_CI95_low",0.0594701392168186
+"boot_CI95_high",0.526497146501561
+"sign_test_p_two_sided",0.0169005393981934
+"sign_test_p_one_sided_greater",0.00845026969909669
+"wilcoxon_p_two_sided",0.0208582878112793
+"wilcoxon_p_one_sided_greater",0.0104291439056396
+"wilcoxon_exact",1
+"check_sum_d_over_sqrtK_equals_observed",1.33226762955019e-15

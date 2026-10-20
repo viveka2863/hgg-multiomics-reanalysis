@@ -1,0 +1,9 @@
+"quantity","value"
+"n_repo_benchmark",4703
+"n_SD1_labelled",4703
+"n_intersect",4703
+"jaccard",1
+"n_SD1_all",13567
+"n_repo_raw_matrix",13567
+"n_SD1_all_in_repo_raw",13566
+"cluster_label_agreement_on_intersect",1

@@ -1,0 +1,15 @@
+"quantity","value"
+"n_SD2a_sites",28527
+"n_SD2a_labelled",6768
+"n_ours_rows",31913
+"n_ours_unique_keys",26372
+"n_ours_rows_duplicate_key",5541
+"SD2a_all_matched_in_ours",20380
+"SD2a_all_match_rate",0.714410908963438
+"SD2a_labelled_matched_in_ours",4795
+"SD2a_labelled_match_rate",0.708481087470449
+"ours_keys_matched_in_SD2a",20380
+"ours_keys_match_rate",0.77278932200819
+"ours_keys_unmatched",5992
+"SD2a_all_unmatched",8147
+"SD2a_labelled_unmatched",1973

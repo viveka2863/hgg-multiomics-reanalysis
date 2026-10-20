@@ -1,0 +1,3 @@
+"subset","pooled_median_abs_diff_unscaled","pooled_median_abs_diff_rescaled","ratio_unscaled_over_rescaled","rescaled_supported"
+"all",0.156007634950336,0.037937675208205,4.11220861832342,TRUE
+"labelled",0.177393608067597,0.0549440454831425,3.22862298375943,TRUE

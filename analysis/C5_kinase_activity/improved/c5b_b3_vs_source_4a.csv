@@ -1,0 +1,5 @@
+"set","n_ours","n_paper","tp","precision","recall","jaccard","reconciled_jaccard_ge_0.8"
+"4e BH<0.05 and >=3 substrates",41,41,36,0.878048780487805,0.878048780487805,0.782608695652174,FALSE
+"4e BH<0.05 (no substrate filter)",63,41,39,0.619047619047619,0.951219512195122,0.6,FALSE
+"shipped coded table adj.P<0.05",62,41,38,0.612903225806452,0.926829268292683,0.584615384615385,FALSE
+"our all-10 table adj.P<0.05",63,41,39,0.619047619047619,0.951219512195122,0.6,FALSE
