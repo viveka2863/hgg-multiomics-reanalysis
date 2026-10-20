@@ -331,3 +331,17 @@ Not committed. git status --short JUMPn JUMPp is empty.
 - Verified from the committed tables: Q-A (4 enriched: E2F4, REST, STAT2 from the benchmark, STAT1; AUC 0.7258 vs size-only 0.6233; p 0.0275), Q-B (AUC 0.726 / 0.750 / 0.722; enriched 4 / 26 / 6; Jaccard 0.154 and 0.667), Q-C (AUC 0.512 and 0.659; lists of 484 and 742 genes), Q-D (Jaccard 0.375; FCS AUC 0.784), Q-E (8/10 runs >= 0.7), Q-F ranks.
 - Verdict: C6a supported by the rule (thin margin; partly target-set size); C6b robust in ranking, method-dependent in lists; C6c not supported and not stable (low power for the genotype lists).
 - Pattern across claims: leave-one-out failures occur when TRK1 or TRK2 is dropped (C1, C5, C8, C6), and dropping TRK3 never hurts.
+
+## 2026-10-21 PRE-REGISTRATION: C9 CRISPR benchmark of the rankings (written BEFORE running any C9 script)
+Prior knowledge: availability of the nine regulators was checked before this plan (all have phosphosites; all but Myc have a proteome row; IKAP has Prkaa1, Prkaa2, Eef2k and Insr; the C6 TF sets cover Jun, Myc, Brca1, Ep300 and Jund; the C8 candidate network contains Brca1, Myc, Ep300 and Jund). No benchmark score was computed before this entry.
+Benchmarks (paper Fig. 8b and text): B9 = hits Jun, Myc, Prkaa1, Prkaa2, Eef2k vs non-hits Brca1, Ep300, Insr, Jund. B15 (secondary, gene-level scores only) = B9 plus the cross-species genes Cd93 (hit) and Cd74, Epha2, Spry1, Arhgap18, Dab2 (non-hits; the paper notes they may reflect low cutting efficiency). Dropout criterion in the paper: 2 of 3 dual-gRNA constructs significantly decreased after 15 days.
+Gene-level scores (six, counted for the multiple-testing guard): S1 = -log10 limma F adj.P of the protein (3-group, unscaled, best row per gene, as in C2); S2 = -log10 adj.P of the NTRK-vs-PDGFRA protein contrast; S3 = -log10 limma F adj.P of the best phosphosite per gene; S4 = -log10 adj.P of the NTRK-vs-PDGFRA contrast of the best phosphosite; S5 = mean log2 protein abundance over the 10 samples (expression baseline); S6 = number of measured phosphosite rows for the gene (detection baseline). Proteome-based scores (S1, S2, S5) are unavailable for Myc (n = 8, 4 hits vs 4 non-hits on B9).
+Type-specific rankings (descriptive only): K1 = IKAP F-test -log10 adj.P (coded and all-10, from C5) and signed NTRK-PDGFRA effect for the 4 kinases; T1 = C6 ORA -log10 p under own, U1, U3 for the 5 TFs; N1 = C8 R0 acceptance for Brca1, Myc, Ep300, Jund.
+Metric: AUC (probability that a hit outranks a non-hit; ties 0.5) with an exact one-sided permutation p over all labelings of the available genes.
+- Q-A (B9): AUC and exact p for S1-S6.
+- Q-B (B15): AUC and exact p for S1-S6 over the genes with data (report which genes are missing).
+- Q-C (descriptive): AUC for K1, T1 and N1 with the smallest attainable p (kinases 0.25, TFs 0.10, N1 0.25).
+- Q-D (expression baseline): does any score exceed S5's AUC by >= 0.1 on the same benchmark.
+- Q-E (TRK3 arm): S1-S4 recomputed without TRK3 (9 samples), AUC on B9 and B15.
+- Rule: a ranking "separates hits from non-hits" if AUC >= 0.8 and exact p < 0.05/6 on B9 or B15; it "adds value over expression" if in addition its AUC exceeds S5's by >= 0.1. Verdict C9: the benchmark supports a ranking if at least one score qualifies; otherwise no ranking is validated (and the benchmark is described as underpowered for type-specific rankings).
+- Out of scope: new gRNA-level analysis (the screen data are not in the repo); human cross-species data.
