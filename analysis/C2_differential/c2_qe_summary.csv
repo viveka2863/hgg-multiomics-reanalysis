@@ -1,0 +1,5 @@
+"layer","list","jaccard.min","jaccard.median","jaccard.n_ge_0.8","stable"
+"phospho","limma_F_3group",0.80620508725904,0.894299973886739,10,TRUE
+"protein","limma_F_3group",0.874285714285714,0.944184359895252,10,TRUE
+"phospho","NTRK_vs_PDGFRA",0.522875816993464,0.735564333032688,3,FALSE
+"protein","NTRK_vs_PDGFRA",0.590318772136954,0.829427403795026,7,FALSE

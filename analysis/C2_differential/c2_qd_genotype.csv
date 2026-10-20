@@ -1,0 +1,7 @@
+"layer","arm","n_de","share_higher_in_NTRK","n_features"
+"protein","all10",527,0.59392789373814,13567
+"protein","noTRK3",820,0.647560975609756,13567
+"protein","jaccard_all10_vs_noTRK3",NA,0.590318772136954,13567
+"phospho","all10",751,0.559254327563249,31913
+"phospho","noTRK3",1363,0.544387380777696,31913
+"phospho","jaccard_all10_vs_noTRK3",NA,0.527456647398844,31913

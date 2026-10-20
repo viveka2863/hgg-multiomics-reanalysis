@@ -1,0 +1,7 @@
+"layer","comparison","jaccard","agree"
+"protein","anova_param_vs_anova_perm_paper_thresholds",0.997263273125342,TRUE
+"protein","limma_F_vs_anova_perm_paper_thresholds",0.98539751216874,TRUE
+"protein","limma_F_noTRK3_vs_limma_F_all10",0.874285714285714,TRUE
+"phospho","anova_param_vs_anova_perm_paper_thresholds",0.995727125386769,TRUE
+"phospho","limma_F_vs_anova_perm_paper_thresholds",0.943327749860413,TRUE
+"phospho","limma_F_noTRK3_vs_limma_F_all10",0.80620508725904,TRUE
