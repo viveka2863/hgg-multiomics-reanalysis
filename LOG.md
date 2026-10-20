@@ -439,3 +439,27 @@ Method (leave-one-gene-out neighbour voting): for a set S and a held-out member 
 - Q-E Named sets (descriptive): AUC for KEGG_CELL_CYCLE, KEGG_OXIDATIVE_PHOSPHORYLATION, KEGG_RIBOSOME, KEGG_SPLICEOSOME, KEGG_CITRATE_CYCLE_TCA_CYCLE, KEGG_FOCAL_ADHESION and the nine S_wide sets from C4.
 - Verdict rule: C10a = Q-A; C10b = Q-B; C10c = Q-C and Q-D.
 - Out of scope: external networks (PPI), GO terms, other predictors, phospho.
+
+## 2026-10-21 C10 RESULTS (design as pre-registered above; no thresholds or definitions changed)
+Scripts: analysis/C10_function_prediction/c10_lib.R, original/c10a_gba.R (Q-A), improved/c10b_controls.R (Q-B to Q-E). Outputs in original/ and improved/; rows in results/metrics.csv (claim C10); env/sessionInfo_C10.txt.
+Universe: 4,703 labelled accessions -> 4,699 genes (1 accession absent from the whole-proteome file: cu|TPM3_NTRK1|TMP3_NTRK1; 3 more with GN = NA; 0 duplicate genes). All 4,699 have a WP label. KEGG_DB: 186 sets; 125 have >= 10 genes in the universe (ortholog table, as in C4).
+- Q-A: median set AUC 0.657 (>= 0.65: informative by the rule); 47 sets AUC >= 0.7; 76 sets BH < 0.05.
+- Q-B: degree-only median 0.548, cluster vote 0.603. Median gain of GBA: 0.056 over degree, 0.057 over cluster vote (both >= 0.05, so "adds value" by the rule, narrowly). Differences of medians: 0.109 and 0.054.
+- Q-C: within-group residual network median 0.677; change vs Q-A -0.020 (not "driven by the group structure": the fall is < 0.10; the AUC rose).
+- Q-D: Spearman 0.660; without TRK3 0.650 (0.649999, i.e. 0.00001 below the 0.65 line); leave-one-sample-out medians 0.650-0.662, >= 0.65 in 9/10 runs (only the TRK3-out run is below, the same value as the no-TRK3 network) -> stable by the >= 9/10 rule.
+- Q-E: see improved/c10_qe_named_sets.csv (e.g. oxidative phosphorylation 0.926, ribosome 0.945, cell cycle 0.796, focal adhesion 0.406; S_wide sets 0.54-0.73). KEGG_MTOR_SIGNALING_PATHWAY has 9 genes in the universe, so it is below the pre-registered 10-gene minimum: AUC reported descriptively, no p-value.
+Verified by data: all numbers above, from the scripts. The C++ per-member AUC was checked against a naive R implementation (3 sets, agreement < 1e-12) inside c10b_controls.R.
+Assumed / interpretation choices where the pre-registration was silent (none changes a pre-registered threshold):
+- Rescaled matrix = raw channels x C2 rescale factors (as in c2c_ntrk_subset.R); "highest mean abundance" = mean of the rescaled linear intensities over 10 samples.
+- Null: the 1,000 random sets per distinct set size are drawn once (seed 1) and shared by all sets of that size and by every network/baseline; p and BH as pre-registered. Null on the random sets uses the same scoring (set AUC = mean member AUC).
+- Degree baseline = rowSums(W) over all genes (not leave-one-out; it does not depend on the set). Cluster vote for a non-member j = members of S\{g} in j's cluster / (|S|-1).
+- "Median gain" = median over sets of the paired difference (GBA - baseline); difference of medians also saved.
+- Without TRK3 uses the Pearson network on 9 samples (Q-D wording). Leave-one-out gives median AUC only (no nulls).
+- Named sets with < 10 genes are scored descriptively with >= 3 genes; none got a p-value.
+Fixes to own code: (1) load_universe asserted that all 4,703 label accessions are in the matrix and failed on the fusion entry; replaced with an explicit check that exactly that one is missing. (2) First draft of c10b_controls.R had a leftover placeholder line for the Spearman network (nulls[0]); removed before any run completed. No analysis results were changed by either.
+Note: the Q-A median (0.657) and the TRK3-out median (0.650) sit close to the 0.65 line; the rules were applied as written.
+
+## 2026-10-21 C10 verification and verdict
+- Reported by the run (files not re-inspected here): Q-A median set AUC 0.657, 47 sets >= 0.7, 76 significant; Q-B degree 0.548, cluster vote 0.603, paired median gains 0.056 / 0.057; Q-C within-group network 0.677; Q-D Spearman 0.660, without TRK3 0.650, leave-one-out 0.650-0.662 (9/10 >= 0.65); Q-E named sets.
+- To check in the CSV: difference of medians vs paired median gain over degree (0.657 - 0.548 = 0.109 from the reported medians vs 0.056 paired); the paired gain is the pre-registered quantity.
+- Verdict: C10a informative (narrow); C10b adds value (narrow); C10c not group-driven, stable (TRK3-out run at the threshold). Strong for complexes, weak for signalling sets.

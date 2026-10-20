@@ -1,0 +1,2 @@
+"median_pearson","median_within_group","drop","driven_by_group_structure","median_spearman","median_no_TRK3","loo_runs_ge_0.65","loo_stable","loo_min","loo_max"
+0.657016702629266,0.676880570409982,-0.0198638677807161,FALSE,0.659682235018128,0.64999900103892,9,TRUE,0.64999900103892,0.662237056693479
