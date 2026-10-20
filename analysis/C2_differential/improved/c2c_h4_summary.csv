@@ -1,0 +1,3 @@
+"entries","n","median_abs_diff_Fi_NTRK_vs_sheet_column","median_abs_diff_vs_recomputed_all3","median_abs_diff_vs_recomputed_TRK1TRK2","median_abs_diff_Fi_PDGFRA_vs_sheet_column","spearman_Fi_vs_sheet","spearman_Fi_vs_all3","spearman_Fi_vs_TRK12"
+"all_entries",22,0,0.152330414225265,2.22044604925031e-16,0,1,0.983060417843027,1
+"single_site_entries",15,0,0.14641850949235,1.11022302462516e-16,0,1,0.982142857142857,1

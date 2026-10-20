@@ -1,0 +1,13 @@
+"layer","arm","fc_mode","ntrk","n_ours","n_paper","tp","precision","recall","jaccard","reproduced_jaccard_ge_0.8"
+"protein","sheet_intensities","log2_of_mean","all3",4957,4703,4111,0.829332257413758,0.874122900276419,0.740854207965399,FALSE
+"protein","sheet_intensities","log2_of_mean","TRK1+TRK2",5473,4703,4597,0.839941531152933,0.977461194981926,0.823982792615164,TRUE
+"protein","sheet_intensities","mean_of_log2","all3",4929,4703,4089,0.829580036518564,0.869445035083989,0.737687173011005,FALSE
+"protein","sheet_intensities","mean_of_log2","TRK1+TRK2",5465,4703,4590,0.839890210430009,0.97597278332979,0.82287558264611,TRUE
+"phospho","sheet_intensities","log2_of_mean","all3",5650,6768,5351,0.947079646017699,0.790632387706856,0.757181265034668,FALSE
+"phospho","sheet_intensities","log2_of_mean","TRK1+TRK2",6974,6768,6653,0.953971895612274,0.983008274231678,0.938496261814078,TRUE
+"phospho","sheet_intensities","mean_of_log2","all3",5639,6768,5334,0.945912395814861,0.788120567375887,0.754135444648664,FALSE
+"phospho","sheet_intensities","mean_of_log2","TRK1+TRK2",6959,6768,6632,0.953010490012933,0.979905437352246,0.934742776603242,TRUE
+"protein","repo_rescaled_anova_perm","mean_of_log2","all3",4912,4703,4083,0.831229641693811,0.868169253667872,0.738069414316703,FALSE
+"protein","repo_rescaled_limma_F","mean_of_log2","all3",4986,4703,4103,0.822904131568391,0.872421858388263,0.734514858575009,FALSE
+"protein","repo_rescaled_anova_perm","mean_of_log2","TRK1+TRK2",5445,4703,4586,0.842240587695133,0.975122262385711,0.824523552678892,TRUE
+"protein","repo_rescaled_limma_F","mean_of_log2","TRK1+TRK2",5538,4703,4592,0.8291802094619,0.976398043801829,0.812887236679058,TRUE

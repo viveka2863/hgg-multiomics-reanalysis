@@ -1,0 +1,13 @@
+"layer","subset_rows","ratio_column","best_ntrk_subset","min_median_abs_diff","second_best","second_median_abs_diff","exact"
+"phospho","all","NTRK_Cortex","TRK1+TRK2",1.11022302462516e-16,"TRK1",0.0736583799324628,TRUE
+"protein","all","NTRK_Cortex","TRK1+TRK2",0.00250313447653899,"TRK2",0.0346128765990104,TRUE
+"phospho","labelled","NTRK_Cortex","TRK1+TRK2",2.22044604925031e-16,"TRK2",0.0850619255841771,TRUE
+"protein","labelled","NTRK_Cortex","TRK1+TRK2",0.00257193183732696,"TRK1",0.0383644503550808,TRUE
+"phospho","all","NTRK_PDGFRA","TRK1+TRK2",0,"TRK1",0.0736583799324628,TRUE
+"protein","all","NTRK_PDGFRA","TRK1+TRK2",0.00250941660362111,"TRK1",0.0345934169407212,TRUE
+"phospho","labelled","NTRK_PDGFRA","TRK1+TRK2",0,"TRK2",0.0850619255841767,TRUE
+"protein","labelled","NTRK_PDGFRA","TRK1+TRK2",0.00246361063019962,"TRK1",0.0382825161663812,TRUE
+"phospho","all","PDGFRA_Cortex","all3",0,"TRK1+TRK2",0,TRUE
+"protein","all","PDGFRA_Cortex","all3",0.00246988840048173,"TRK1+TRK2",0.00246988840048173,TRUE
+"phospho","labelled","PDGFRA_Cortex","all3",0,"TRK1+TRK2",0,TRUE
+"protein","labelled","PDGFRA_Cortex","all3",0.00249840156096048,"TRK1+TRK2",0.00249840156096048,TRUE
