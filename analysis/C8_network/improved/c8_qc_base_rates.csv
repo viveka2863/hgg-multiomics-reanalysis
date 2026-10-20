@@ -1,0 +1,4 @@
+"layer","n_ordered","n_evaluable","base_rate","candidate_edges_ordered"
+"L1_kinase_activity",52,90,0.577777777777778,16
+"L2_phosphosite",9863,24325,0.405467625899281,25
+"L3_TF_targets",102,107,0.953271028037383,28

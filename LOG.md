@@ -250,3 +250,28 @@ Rule R0: a candidate edge (kinase K -> TF T via site s) is accepted if all three
 - Q-E CRISPR (descriptive, n = 4 TFs): accepted status of MYC (CRISPR hit) vs BRCA1, EP300, JUND (non-hits); the kinases and JUN are not in the candidate network and are handled in C9.
 - Out of scope: RNA transcripts, PhosphoSitePlus beyond the repo table, kinase-kinase edges, PRKCA/PRKAA1 and JUN/CEBPB (no candidate edges).
 - Verdict rule: C8a = Q-A; C8b = Q-B; C8c = Q-C.
+
+## 2026-10-20 C8 RESULTS (scripts: analysis/C8_network/{c8_lib.R, original/c8_original.R, improved/c8_improved.R}; not committed)
+Design and thresholds unchanged from the pre-registration. Seeds: set.seed(1) (no randomness used). igraph installed (betweenness computed). env/sessionInfo_C8.txt written.
+Verified by data (scripts):
+- Candidate set recomputed: 28 edges, 15 kinases, 14 TFs (kinase x TF x site, unique). The pre-registration said 32/18/14. NOT reproduced; I could not find the cause. Checks: without the IKAP filter the repo gives 34 edges / 19 kinases (extra kinases MAPK8/9/10, CSNK2A2 are absent from IKAP); counting per phospho ID gives 75 rows; matching by orig-substrate gene symbol gives 2. The earlier count was made outside the repo (a lead only), so the repo number stands.
+- R0 accepts 15 of 28 edges (15 nodes). Q-A: MYC, JUND, EP300, BRCA1, AKT1, MAPK3, CDK5 all accepted; AKT1->BRCA1 S686 accepted (recovered).
+- Q-B: V1 (>=2 of 3) 26 edges/26 nodes, J=0.577; V2 (no TRK3) identical to R0, J=1.0; LOO J: PD1 .87, PD2 .94, PD3 1, PD4 .93, TRK1 .75, TRK2 .67, TRK3 1, Cortex1-3 1; >=0.8 in 8/10 -> not robust by the rule (V1 and LOO TRK1/TRK2 fail).
+- Q-C: base rates L1 52/90=0.578, L2 9863/24325 unique phosphosites=0.405, L3 102/107 TF sets=0.953 (8 TFs have <10 detected targets); expected 28 x product = 6.25, observed 15, ratio 2.40 (>=2: informative by the rule). L3 base rate is near 1 so that layer barely discriminates; the ratio is carried by L1 and L2.
+- Q-D: degree Spearman candidate vs accepted 0.554 over 29 candidate nodes (accepted degree 0 for non-accepted), 0.801 over the 15 accepted nodes; betweenness (candidate, simple graph) vs accepted degree 0.711. Degree counts kinase-TF-site edges (multigraph).
+- Q-E: MYC (CRISPR hit) accepted with 6/7 edges; BRCA1 1/1, EP300 1/1, JUND 2/2 (non-hits) also accepted, so acceptance does not separate hits from non-hits (n=4).
+Assumed / choices not fixed by the pre-registration:
+- Proteome duplicate gene symbols (1,705 dropped): kept the row with the highest mean log2 intensity; proteins with any zero/NA channel dropped. Rows with GN "NA" and "co|" removed.
+- Phospho: non-positive intensities set NA before log2; a site's value = mean over IDs containing the site (NA propagates); TF identity matched by upper-cased phospho gene symbol to the TF name or its mouse homologs (hs_mm_homo_r66); candidate edges deduplicated by kinase, TF, site.
+- TF file first line (description) skipped; L3 z-scores recomputed over the retained samples in each leave-one-out run; L3 uses a TF's detected targets only if >= 10.
+- Q-B Jaccard on node set labelled K:/T: (a gene that is both kinase and TF, e.g. GTF2F1, appears as two nodes).
+- Q-D Spearman over all candidate nodes is my primary reading of "between the two"; the accepted-node-only value is also given.
+Fixes to own code: none needed after first successful run (first Bash call failed only because I typed a wrong tool name). No test of JUMPn/JUMPp edits: git status --short JUMPn JUMPp is empty.
+
+## 2026-10-20 C8 verification and verdict
+- Verified from the committed tables: all numbers in the C8 RESULTS entry.
+- Correction: the pre-registered candidate count (32 edges / 18 kinases / 14 TFs) came from a check that did not merge upper- and lower-case kinase names (MAPK1/Mapk1, MAPK3/Mapk3, GSK3B/Gsk3b appear in both cases in Mouse_Kinase_Substrate.txt); merged, the count is 28 / 15 / 14, as the repo run found.
+- Observations: R0 accepts 15 of 28 candidate edges; V1 accepts 26 of 28; the TF-target layer passes 28/28 candidate edges (base rate 0.953); the phosphosite layer passes 25/28 (base rate 0.405). The Q-C ratio assumes independent layers.
+- Verdict: C8a recovered; C8b not robust (V1 0.58; leave-one-out 8/10); C8c informative by the registered ratio but doubtful (independence assumption; tested in part B).
+- Data note: Mouse_Kinase_Substrate.txt has 11 fields per row and 10 header names (columns shift on a normal read).
+- Figure fix for the final pass: C8 fig 1, GTF2F1 appears as both a kinase and a TF and its self-loop is clipped at the top.

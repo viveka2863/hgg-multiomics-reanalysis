@@ -1,0 +1,5 @@
+"TF","CRISPR_hit","in_candidate","accepted_R0","n_accepted_edges","n_candidate_edges"
+"MYC",TRUE,TRUE,TRUE,6,7
+"BRCA1",FALSE,TRUE,TRUE,1,1
+"EP300",FALSE,TRUE,TRUE,1,1
+"JUND",FALSE,TRUE,TRUE,2,2
