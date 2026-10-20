@@ -1,0 +1,4 @@
+"scope","n_assignments","n_ge_observed","share"
+"all 4,200 assignments",4200,187,0.0445238095238095
+"assignments keeping the true Cortex group",35,2,0.0571428571428571
+"assignments breaking the Cortex group",4165,185,0.0444177671068427
