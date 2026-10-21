@@ -1178,3 +1178,5 @@
 "C11","QD_overlap","jaccard_enriched_TFs",0.285714285714286,7
 "C11","QD_overlap","recall_of_23_in_intersection",0.0869565217391304,23
 "C11","QD_overlap","n_enriched_both",2,7
+"C5","suppB_posthoc_source4a","jaccard",0.782608695652174,41
+"C5","suppB_posthoc_printed_fig4a","jaccard",0.822222222222222,41
