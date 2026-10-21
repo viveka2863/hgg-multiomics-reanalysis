@@ -46,7 +46,7 @@ macOS arm64, R 4.6.1, Java 11, Perl 5.34. Use Rscript. Commit email is already s
 
 # Results convention
 Every comparison script (1) writes tidy CSVs with Protein_Accession (or site ID) into its claim folder,
-(2) saves figures as PNG and PDF, (3) appends rows to results/metrics.csv with columns: claim, variant, metric, value, n.
+(2) saves figures as PNG, (3) appends rows to results/metrics.csv with columns: claim, variant, metric, value, n.
 Scripts are the source of truth; no notebooks for analysis.
 
 # Evidence rule

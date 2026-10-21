@@ -85,7 +85,6 @@ wr(d, "c5b_b3_disagreeing_kinases.csv"); msg("kinases in only one of {filtered 4
 # ---- figure -------------------------------------------------------------------------------------------------------------------------
 save_fig2 <- function(name, w, h, fn) {
   png(file.path(OI, paste0(name, ".png")), w, h, units = "in", res = 150); fn(); invisible(dev.off())
-  pdf(file.path(OI, paste0(name, ".pdf")), w, h); fn(); invisible(dev.off())
 }
 save_fig2("c5b_fig1_filter_chain", 11, 5, function() {
   par(mfrow = c(1, 2), mar = c(9, 4.5, 3, 1))

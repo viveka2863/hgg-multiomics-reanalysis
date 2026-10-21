@@ -225,7 +225,6 @@ wr(dec, "c2b_a3_rescaled_decision.csv"); print(dec, row.names = FALSE, digits = 
 # ---- figures ---------------------------------------------------------------------------------------------------------------------------
 save_fig2 <- function(name, w, h, fn) {
   png(file.path(O, paste0(name, ".png")), w, h, units = "in", res = 150); fn(); invisible(dev.off())
-  pdf(file.path(O, paste0(name, ".pdf")), w, h); fn(); invisible(dev.off())
 }
 save_fig2("c2b_fig1_log2ratios_vs_paper", 11, 11, function() {
   par(mfrow = c(3, 3), mar = c(4, 4, 3, 1))

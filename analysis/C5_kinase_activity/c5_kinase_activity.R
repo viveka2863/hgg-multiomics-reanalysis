@@ -163,7 +163,6 @@ write.csv(QF, file.path(OI, "c5_descriptive_ranks.csv"), row.names = FALSE)
 # ---------------- Figures --------------------------------------------
 fig <- function(name, expr, w = 5.5, h = 5) {
   png(file.path(OI, paste0(name, ".png")), width = w, height = h, units = "in", res = 200); expr(); dev.off()
-  pdf(file.path(OI, paste0(name, ".pdf")), width = w, height = h); expr(); dev.off()
 }
 fig("fig1_coded_vs_all10_effect", function() {
   x <- A$`group2...group1`; y <- B$`group2...group1`

@@ -12,9 +12,8 @@ SD_ORDER <- c("Cortex1","Cortex2","Cortex3","PD1","PD2","PD3","PD4","TRK1","TRK2
 rdx <- function(f) read.csv(file.path("data/external/csv", f), header = FALSE, colClasses = "character", na.strings = "")
 num <- function(m) { m <- as.matrix(m); storage.mode(m) <- "double"; m }
 key <- function(g) toupper(g)                          # case-insensitive gene matching (pre-registered)
-save_fig11 <- function(dir, name, w, h, fn) {          # PNG and PDF
+save_fig11 <- function(dir, name, w, h, fn) {          # PNG
   png(file.path(dir, paste0(name, ".png")), w, h, units = "in", res = 150); fn(); invisible(dev.off())
-  pdf(file.path(dir, paste0(name, ".pdf")), w, h); fn(); invisible(dev.off())
 }
 put_metrics11 <- function(df, prefixes) {              # idempotent: replaces C11 rows whose variant starts with one of `prefixes`
   names(df) <- c("claim", "variant", "metric", "value", "n")

@@ -86,7 +86,6 @@ write.csv(data.frame(test = names(ps), p = ps, lt_0.05 = ps < 0.05, C1_agrees = 
 # ---- figure -----------------------------------------------------------------------------------------------------------------------------
 save_fig2 <- function(name, w, h, fn) {
   png(file.path(OUT, paste0(name, ".png")), w, h, units = "in", res = 150); fn(); invisible(dev.off())
-  pdf(file.path(OUT, paste0(name, ".pdf")), w, h); fn(); invisible(dev.off())
 }
 save_fig2("c7b_fig1_per_site_and_nulls", 14, 5.5, function() {
   layout(matrix(1:3, 1), widths = c(1.4, 1, 1)); par(mar = c(8, 4.5, 3, 1))

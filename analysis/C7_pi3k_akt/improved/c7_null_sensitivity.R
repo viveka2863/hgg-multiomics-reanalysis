@@ -53,7 +53,6 @@ cross <- R$tau[which(R$p_value >= 0.05)[1]]
 
 save_fig <- function(name, fun, w, h) {
   png(file.path(OUT, paste0(name, ".png")), width = w, height = h, units = "in", res = 150); fun(); invisible(dev.off())
-  pdf(file.path(OUT, paste0(name, ".pdf")), width = w, height = h); fun(); invisible(dev.off())
 }
 save_fig("c7_null_sensitivity", function() {
   par(mfrow = c(1, 3), mar = c(4.5, 4.5, 3, 1))

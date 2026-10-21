@@ -497,3 +497,10 @@ Not done / out of scope as pre-registered: raw RNA reads; sample-level RNA-prote
 - Verdict: C11a concordant; C11b RNA ratios use all samples while the protein and phospho ratios use TRK1+TRK2 (C2 part C); C11c genotype not batch, RNA TF activity AUC 0.715 but 2/23 TFs in both layers.
 - Assumption: the RNA DE rule is the protein rule (BH < 0.05 and |log2 ratio| >= log2(1.5)); the paper does not give an RNA rule in the files used here.
 - Figure fix for the final pass: C11 fig 1 PDF is about 2.1 MB (thin or rasterise the scatterplots).
+
+## 2026-10-21 REPOSITORY CLEANUP
+- Pre-checks passed (git status empty; HEAD = "C11 RNA layer: concordance, samples behind the ratios, structure, TF activity"). No analysis re-run; nothing staged or committed. Deletions done with plain rm.
+- Removed: 47 figure PDFs (9,715,489 bytes; each had a same-name PNG twin), 5 *.log files (15,921 bytes), 2 empty .gitkeep files (0 bytes). Total 54 files, 9,731,410 bytes.
+- Scripts edited (PDF-writing lines removed, PNG output and function signatures unchanged): c1_exploration.R, c1b_trk3.R, c2_lib.R, c2b_paper_supp_compare.R, c2c_ntrk_subset.R, c3_compare.R, c4b_fold_enrichment.R, c5_kinase_activity.R, c5b_reconcile_paper_tables.R, c7_null_sensitivity.R, c7b_ap_per_site.R, c8_original.R, c8_improved.R, c8b_partB.R, c9_main.R, c10_lib.R, c11_lib.R (17 files). All parse; the 13 helper functions were smoke-tested on a trivial plot: exactly 1 PNG, 0 PDF each. The inline PNG/PDF pairs in c4b, c8_original, c8_improved and c8b_partB were checked by parse only.
+- Logs kept: C1/improved/run.log (LOG.md cites its ARI values as the source of a prior-knowledge statement), C3/original/run.log and C3/original/compare.log (listed in the C3 original README; LOG.md line 5 cites run.log). Logs removed: C1 ari_signature_check.log and run_partB.log, C3/improved/run.log, C5/run.log, C7/improved/run.log (no README or LOG reference).
+- Results convention change: figures are now PNG only (CLAUDE.md). Earlier LOG entries that mention PDFs (e.g. the C11 fig 1 PDF-size note) are left as history and are now moot.

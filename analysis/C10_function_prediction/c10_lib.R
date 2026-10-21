@@ -117,5 +117,4 @@ put_metrics <- function(df, variants) {
 }
 fig <- function(dir, name, w, h, fn) {
   png(file.path(dir, paste0(name, ".png")), w, h, units = "in", res = 150); fn(); dev.off()
-  pdf(file.path(dir, paste0(name, ".pdf")), w, h); fn(); dev.off()
 }

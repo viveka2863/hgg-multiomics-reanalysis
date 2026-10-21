@@ -103,6 +103,5 @@ append_metrics <- function(df, drop_variants = NULL) {
 }
 save_fig <- function(name, w, h, fn) {
   png(file.path(OUT, paste0(name, ".png")), w, h, units = "in", res = 150); fn(); dev.off()
-  pdf(file.path(OUT, paste0(name, ".pdf")), w, h); fn(); dev.off()
 }
 write_gz <- function(df, f) { con <- gzfile(f, "w"); write.csv(df, con, row.names = FALSE); close(con) }

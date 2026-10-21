@@ -77,8 +77,6 @@ qb_clusters <- function(lab, z, variant, wpc1, de_acc) {
 save_fig <- function(name, fun, w = 8, h = 6) {
   png(file.path(OUT, paste0(name, ".png")), width = w, height = h, units = "in", res = 150)
   fun(); invisible(dev.off())
-  pdf(file.path(OUT, paste0(name, ".pdf")), width = w, height = h)
-  fun(); invisible(dev.off())
 }
 METRICS <- list()
 add_metric <- function(variant, metric, value, n) {

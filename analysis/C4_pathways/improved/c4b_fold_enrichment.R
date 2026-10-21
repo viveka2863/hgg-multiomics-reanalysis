@@ -31,7 +31,6 @@ fig <- function() {
   abline(h = 1, lty = 3); legend("topright", legend = rownames(m), fill = c("grey30", "grey80"), bty = "n", cex = 0.8)
 }
 png(file.path(OUT, "c4b_fig4_fold_enrichment.png"), width = 9, height = 5.5, units = "in", res = 150); fig(); invisible(dev.off())
-pdf(file.path(OUT, "c4b_fig4_fold_enrichment.pdf"), width = 9, height = 5.5); fig(); invisible(dev.off())
 vn <- paste0("partB_posthoc_fold_", res$reference, "_", res$list)
 M <- rbind(data.frame(claim = "C4", variant = vn, metric = "median_fold_S_wide", value = res$median_fold_S_wide, n = 9),
            data.frame(claim = "C4", variant = vn, metric = "median_fold_all_sets", value = res$median_fold_all_sets, n = 186))

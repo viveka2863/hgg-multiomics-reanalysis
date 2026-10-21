@@ -137,7 +137,6 @@ f3 <- function() {
 for (nm in c("f1", "f2", "f3")) {
   fn <- c(f1 = "c8b_fig1_permutation", f2 = "c8b_fig2_group_offsets", f3 = "c8b_fig3_R0_vs_centred")[[nm]]
   png(paste0(out, fn, ".png"), 1400, 750, res = 130); get(nm)(); dev.off()
-  pdf(paste0(out, fn, ".pdf"), 11, 6); get(nm)(); dev.off()
 }
 append_metrics(do.call(rbind, setNames(mrows, NULL)))
 dir.create("env", showWarnings = FALSE)

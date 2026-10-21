@@ -97,7 +97,6 @@ f2 <- function() {
   text(b2, c(expd, obs), sprintf("%.1f", c(expd, obs)), pos = 3)
 }
 png(paste0(out, "c8_fig2_base_rates.png"), 1400, 750, res = 130); f2(); dev.off()
-pdf(paste0(out, "c8_fig2_base_rates.pdf"), 11, 6); f2(); dev.off()
 f3 <- function() {
   par(mar = c(8, 4, 3, 1))
   b <- barplot(qb$jaccard_vs_R0, names.arg = qb$run, las = 2, ylim = c(0, 1.05), ylab = "Jaccard of accepted nodes vs R0",
@@ -105,4 +104,3 @@ f3 <- function() {
   abline(h = 0.8, lty = 2, col = "red")
 }
 png(paste0(out, "c8_fig3_leave_one_out.png"), 1400, 750, res = 130); f3(); dev.off()
-pdf(paste0(out, "c8_fig3_leave_one_out.pdf"), 11, 6); f3(); dev.off()

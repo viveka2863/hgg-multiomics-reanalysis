@@ -130,7 +130,7 @@ wr(h4s, "c2c_h4_summary.csv"); print(t(h4s), digits = 4)
 
 # ---- figures --------------------------------------------------------------------------------------------------------------
 save_fig2 <- function(name, w, h, fn) { png(file.path(O, paste0(name, ".png")), w, h, units = "in", res = 150); fn(); invisible(dev.off())
-  pdf(file.path(O, paste0(name, ".pdf")), w, h); fn(); invisible(dev.off()) }
+}
 FLOOR <- 1e-6   # exact zeros cannot be drawn on a log axis
 cc <- c(NTRK_PDGFRA = "#4E79A7", NTRK_Cortex = "#F28E2B", PDGFRA_Cortex = "#59A14F")
 save_fig2("c2c_fig1_ratio_difference_by_ntrk_subset", 11, 5, function() {

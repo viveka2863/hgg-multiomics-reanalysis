@@ -39,6 +39,5 @@ draw <- function() {
        main = "C8 candidate kinase-TF network (circles kinases, squares TFs; orange = accepted under R0)")
 }
 png(paste0(out, "c8_fig1_candidate_network.png"), 1400, 800, res = 130); draw(); dev.off()
-pdf(paste0(out, "c8_fig1_candidate_network.pdf"), 14, 8); draw(); dev.off()
 dir.create("env", showWarnings = FALSE)
 writeLines(capture.output(sessionInfo()), "env/sessionInfo_C8.txt")

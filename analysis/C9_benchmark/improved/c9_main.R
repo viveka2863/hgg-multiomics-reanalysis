@@ -156,7 +156,6 @@ COL <- c(hit = "#C0392B", non = "#7F8C8D")
 save_fig9 <- function(name, w, h, fn) {
   f <- file.path(OUT9, "improved", name)
   png(paste0(f, ".png"), w, h, units = "in", res = 150); fn(); dev.off()
-  pdf(paste0(f, ".pdf"), w, h); fn(); dev.off()
 }
 fig1 <- function() {
   par(mfrow = c(2, 3), mar = c(4, 6, 2.5, 1))
