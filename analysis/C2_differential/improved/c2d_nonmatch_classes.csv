@@ -1,0 +1,6 @@
+"nonmatch_class","n_all","n_labelled","recoverable_by"
+"absent",1004,252,"none"
+"accession_present_site_differs",6024,1435,"none"
+"accession_site_matches_gene_label_differs",423,117,"acc_site and/or accnoiso_site"
+"exact",20380,4795,"(already exact)"
+"gene_site_matches_accession_differs",696,169,"gene_site"

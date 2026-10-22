@@ -1,0 +1,13 @@
+"subset","key","n_sd2a_sites_with_key_match","n_additional_to_exact","n_with_more_than_one_candidate_row"
+"all_28527","exact",20380,0,3635
+"labelled_DE_6768","exact",4795,0,1009
+"all_28527","acc_site",20411,31,3636
+"labelled_DE_6768","acc_site",4796,1,1009
+"all_28527","accnoiso_site",20803,423,3763
+"labelled_DE_6768","accnoiso_site",4912,117,1047
+"all_28527","gene_site",21471,1091,3993
+"labelled_DE_6768","gene_site",5080,285,1112
+"all_28527","sorted_multisite",20380,0,3635
+"labelled_DE_6768","sorted_multisite",4795,0,1009
+"all_28527","any_key",21499,1119,NA
+"labelled_DE_6768","any_key",5081,286,NA

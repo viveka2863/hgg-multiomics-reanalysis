@@ -1,0 +1,13 @@
+"quantity","value"
+"n_repo_rows",31913
+"n_distinct_ids",26372
+"n_rows_sharing_an_id",10040
+"n_duplicated_ids",4499
+"n_dup_ids_identical_values",0
+"n_dup_ids_distinct_values",4499
+"n_dup_ids_in_SD2a",3635
+"n_dup_ids_in_SD2a_identical",0
+"n_dup_ids_in_SD2a_distinct",3635
+"n_SD2a_sites_with_exact_dup_candidates",3635
+"n_multisite_repo_rows",6752
+"n_SD2a_sites_contained_in_multisite_repo_row_diagnostic",7776
